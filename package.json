@@ -5,7 +5,8 @@
   "main": "webpack.config.js",
   "scripts": {
     "build": "webpack -d --watch",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "seed": "node seed.js"
   },
   "repository": {
     "type": "git",

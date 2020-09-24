@@ -21,6 +21,26 @@ const dbHelpers = {
       }
     });
   },
+  getEntries: (callback) => {
+    const queryStr = 'SELECT * FROM entry';
+    db.query(queryStr, (err, data) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, data);
+      }
+    });
+  },
+  postEntry: (data, callback) => {
+    const queryStr = `INSERT INTO entry (item) VALUES ('${data.item}')`;
+    db.query(queryStr, (err, results) => {
+      if (err) {
+        callback(err);
+      } else {
+        callback(null, results);
+      }
+    });
+  },
 };
 
 module.exports = dbHelpers;

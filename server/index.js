@@ -39,4 +39,24 @@ app.post('/user', (req, res) => {
   });
 });
 
+app.get('/entry', (req, res) => {
+  dbHelpers.getEntries((err, results) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).json(results);
+    }
+  });
+});
+
+app.post('/entry', (req, res) => {
+  dbHelpers.postEntry(req.body, (err) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send('SUCCESSFUL USER POST');
+    }
+  });
+});
+
 app.listen(port, () => console.log(`SUCCESSFUL CONNECTION LISTENING ON PORT #: ${port}`));
