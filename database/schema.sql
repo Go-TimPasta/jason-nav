@@ -11,3 +11,7 @@ CREATE TABLE users (
   email varchar(255) not null
 );
 
+CREATE TABLE entry (
+  id int auto_increment not null primary key,
+  item varchar(255) not null
+);
