@@ -14,7 +14,7 @@ class SignInButton extends React.Component {
       <div className="sign-in-button-container">
         <ul className="button-list">
           <li>
-            <button type="submit" className="sign-in-button" onClick={() => console.log('hello from sign in button')}>Sign in</button>
+            <button type="submit" className="sign-in-button" onClick={() => this.props.onSignInClick()}>Sign in</button>
           </li>
           <CartButton />
         </ul>
