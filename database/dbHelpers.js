@@ -1,5 +1,5 @@
 const db = require('.');
-
+//hello paul
 const dbHelpers = {
   getUsers: (callback) => {
     const queryStr = 'SELECT * FROM users';

@@ -1,3 +1,4 @@
+-- codereview
 DROP DATABASE IF EXISTS navBarDB;
 
 CREATE DATABASE navBarDB;
