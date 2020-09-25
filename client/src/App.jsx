@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import SearchBar from './SearchBar.jsx';
 import SignInButton from './SignInButton.jsx';
 import CartButton from './CartButton.jsx';
@@ -10,16 +11,34 @@ class App extends React.Component {
     super();
     this.state = {
       searchData: [],
+      userData: [],
       active: '',
     };
     this.onSignInClick = this.onSignInClick.bind(this);
     this.overlayClick = this.overlayClick.bind(this);
+    this.getUsers = this.getUsers.bind(this);
+  }
+
+  componentDidMount() {
+    this.getUsers();
   }
 
   onSignInClick() {
     this.setState({
       active: 'active',
     });
+  }
+
+  getUsers() {
+    axios.get('/user')
+      .then((results) => {
+        this.setState({
+          userData: results.data
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }
 
   overlayClick() {
