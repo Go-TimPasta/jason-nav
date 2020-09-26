@@ -2,7 +2,6 @@ import React from 'react';
 import axios from 'axios';
 import SearchBar from './SearchBar.jsx';
 import SignInButton from './SignInButton.jsx';
-import CartButton from './CartButton.jsx';
 import MenuBar from './MenuBar.jsx';
 import SignInModal from './SignInModal.jsx';
 

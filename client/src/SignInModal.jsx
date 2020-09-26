@@ -12,7 +12,7 @@ class SignInModal extends React.Component {
 
   onChangeHandler(e) {
     this.setState({
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   }
 
@@ -26,11 +26,18 @@ class SignInModal extends React.Component {
         <div className="sign-in-modal-body">
           <div className="email-address-container">
             <label htmlFor="email-address">Email address</label>
-            <input id="email-address" type="text" name="email" value={this.state.email} onChange={this.onChangeHandler} ></input>
+            <input id="email-address" type="text" name="email" value={this.state.email} onChange={this.onChangeHandler} />
           </div>
           <div className="password-container">
             <label htmlFor="password">Password</label>
-            <input id="password" type="password" name="password" value={this.state.password} onChange={this.onChangeHandler} ></input>
+            <input id="password" type="password" name="password" value={this.state.password} onChange={this.onChangeHandler} />
+          </div>
+          <div className="sign-in-checkbox-container">
+            <label className="sign-in-checkbox">Stay signed in
+              <input type="checkbox" />
+              <span className="checkmark" />
+            </label>
+            <span className="helperLinks"><a href="#">Forgot your password?</a></span>
           </div>
           <button onClick={() => console.log('hello')} className="sign-in-submit-button" type="submit">Sign In</button>
         </div>
