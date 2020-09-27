@@ -16,6 +16,7 @@ class App extends React.Component {
     this.onSignInClick = this.onSignInClick.bind(this);
     this.overlayClick = this.overlayClick.bind(this);
     this.getUsers = this.getUsers.bind(this);
+    this.addUser = this.addUser.bind(this);
   }
 
   componentDidMount() {
@@ -40,6 +41,20 @@ class App extends React.Component {
       });
   }
 
+  addUser(username, password, email) {
+    axios.post('/user', {
+      username: username,
+      password: password,
+      email: email
+    })
+      .then(() => {
+        this.getUsers();
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
   overlayClick() {
     this.setState({
       active: '',
@@ -52,8 +67,7 @@ class App extends React.Component {
         <SearchBar />
         <SignInButton onSignInClick={this.onSignInClick} />
         <MenuBar />
-        <SignInModal active={this.state.active} />
-        <div id="overlay" className={this.state.active} onClick={() => this.overlayClick()}></div>
+        <SignInModal overlayClick={this.overlayClick} active={this.state.active} addUser={this.addUser} />
       </div>
     );
   }
