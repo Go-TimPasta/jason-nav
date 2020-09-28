@@ -5,11 +5,11 @@ class MenuBar extends React.Component {
     super();
     this.state = {
 
-    }
+    };
   }
 
   render() {
-    return(
+    return (
       <div className="menubar-container">
         <ul className="menubar-list">
           <li>Everyday Finds</li>

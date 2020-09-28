@@ -1,4 +1,6 @@
 import React from 'react';
+import OtherSignIn from './OtherSignIn.jsx';
+import Policy from './Policy.jsx';
 
 class SignInModal extends React.Component {
   constructor() {
@@ -50,13 +52,18 @@ class SignInModal extends React.Component {
                   <input type="checkbox" />
                   <span className="checkmark" />
                 </label>
-                <span className="helperLinks"><a href="#">Forgot your password?</a></span>
+                <span className="helperLinks forgot"><a href="#">Forgot your password?</a></span>
               </div>
               <div className="button-and-trouble-link">
                 <button onClick={() => console.log('hi')} className="sign-in-submit-button" type="submit">Sign In</button>
                 <span className="helperLinks trouble"><a href="#">Trouble signing in?</a></span>
               </div>
             </div>
+            <div className="OR-container">
+              <span>OR</span>
+            </div>
+            <OtherSignIn />
+            <Policy />
           </div>
           <div id="overlay" className={this.props.active} onClick={() => this.props.overlayClick()}></div>
         </div>
@@ -83,6 +90,11 @@ class SignInModal extends React.Component {
             </div>
             <button onClick={() => {this.props.addUser(this.state.username, this.state.password, this.state.email); this.props.overlayClick();}} className="sign-in-submit-button" type="submit">Register</button>
           </div>
+          <div className="OR-container">
+            <span>OR</span>
+          </div>
+          <OtherSignIn />
+          <Policy />
         </div>
         <div id="overlay" className={this.props.active} onClick={() => {this.props.overlayClick(); this.handleModulePage();}}></div>
       </div>
