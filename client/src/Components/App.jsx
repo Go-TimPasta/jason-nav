@@ -1,9 +1,25 @@
 import React from 'react';
 import axios from 'axios';
+import styled, { createGlobalStyle } from 'styled-components';
 import SearchBar from './SearchBar.jsx';
 import SignInButton from './SignInButton.jsx';
 import MenuBar from './MenuBar.jsx';
 import SignInModal from './SignInModal.jsx';
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    box-sizing: border-box;
+  }
+`;
+
+const MainNavBarContainer = styled.div`
+  padding-left: 180px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid lightgray;
+  position: relative;
+`;
 
 class App extends React.Component {
   constructor() {
@@ -63,11 +79,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="main-navbar-container">
-        <SearchBar />
-        <SignInButton onSignInClick={this.onSignInClick} />
-        <MenuBar />
-        <SignInModal overlayClick={this.overlayClick} active={this.state.active} addUser={this.addUser} />
+      <div>
+        <GlobalStyle />
+        <MainNavBarContainer>
+          <SearchBar />
+          <SignInButton onSignInClick={this.onSignInClick} />
+          <MenuBar />
+          <SignInModal overlayClick={this.overlayClick} active={this.state.active} addUser={this.addUser} />
+        </MainNavBarContainer>
       </div>
     );
   }
