@@ -50,12 +50,12 @@ const SearchDropDown = styled.div`
   z-index: 10;
   background-color: white;
   width: 1080px;
-  height: 400px;
+  height: auto;
   border: 1px solid black;
   border-radius: 20px;
   box-shadow: 0 1px 4px 0 rgba(34, 34, 34, 0.1) inset;
   border-color: rgba(34, 34, 34, 0.15);
-  padding: 15px;
+  padding-top: 8px;
 `;
 
 const OverLay = styled.div`
@@ -70,6 +70,7 @@ pointer-events: ${(props) => props.active ? 'all' : 'none'};
 const SearchDropDownHeader = styled.span`
   font-size: 14px;
   font-weight: bold;
+  padding-left: 15px;
 `;
 
 const SearchList = styled.ul`
@@ -78,7 +79,11 @@ const SearchList = styled.ul`
 `;
 
 const SearchItem = styled.li`
-
+  // margin-bottom: 10px;
+  padding: 5px 10px;
+  &:hover {
+    background-color: #e8eaf6;
+  }
 `;
 
 class SearchBar extends React.Component {
@@ -105,7 +110,9 @@ class SearchBar extends React.Component {
         <SearchDropDown>
           <SearchDropDownHeader>Popular right now</SearchDropDownHeader>
           <SearchList>
-
+            {this.props.searches.map((entry, index) => {
+              return <SearchItem key={index}>{entry.item}</SearchItem>
+            })}
           </SearchList>
         </SearchDropDown>
       );

@@ -22,7 +22,7 @@ const dbHelpers = {
     });
   },
   getEntries: (searchItem, callback) => {
-    const queryStr = `SELECT item FROM entry WHERE item LIKE '${searchItem}%';`;
+    const queryStr = `SELECT item FROM entry WHERE item LIKE '${searchItem}%' LIMIT 12;`;
     db.query(queryStr, (err, data) => {
       if (err) {
         callback(err);
