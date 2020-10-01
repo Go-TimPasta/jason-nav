@@ -40,7 +40,8 @@ app.post('/user', (req, res) => {
 });
 
 app.get('/entry', (req, res) => {
-  dbHelpers.getEntries((err, results) => {
+  console.log(req.query);
+  dbHelpers.getEntries(req.query.search, (err, results) => {
     if (err) {
       res.status(400).send(err);
     } else {

@@ -1,5 +1,5 @@
 const db = require('.');
-//hello paul
+
 const dbHelpers = {
   getUsers: (callback) => {
     const queryStr = 'SELECT * FROM users';
@@ -21,8 +21,8 @@ const dbHelpers = {
       }
     });
   },
-  getEntries: (callback) => {
-    const queryStr = 'SELECT * FROM entry';
+  getEntries: (searchItem, callback) => {
+    const queryStr = `SELECT item FROM entry WHERE item LIKE '${searchItem}%';`;
     db.query(queryStr, (err, data) => {
       if (err) {
         callback(err);

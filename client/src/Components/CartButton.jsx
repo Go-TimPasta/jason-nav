@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CartButtonElement = styled.button`
-  font-family: "Graphik Webfont";
+const CartButtonElement = styled.img`
+  // font-family: "Graphik Webfont";
   background: none;
   border: none;
   font: inherit;
@@ -32,7 +32,8 @@ class CartButton extends React.Component {
   render() {
     return (
       <ButtonListItem>
-        <CartButtonElement onClick={() => console.log('hello from cart button')}>Cart</CartButtonElement>
+        {/* <CartButtonElement onClick={() => console.log('hello from cart button')}>Cart</CartButtonElement> */}
+        <CartButtonElement src="https://img.icons8.com/material-sharp/24/000000/shopping-cart-promotion.png" />
       </ButtonListItem>
     );
   }

@@ -33,6 +33,7 @@ class App extends React.Component {
     this.overlayClick = this.overlayClick.bind(this);
     this.getUsers = this.getUsers.bind(this);
     this.addUser = this.addUser.bind(this);
+    this.getSearches = this.getSearches.bind(this);
   }
 
   componentDidMount() {
@@ -50,6 +51,22 @@ class App extends React.Component {
       .then((results) => {
         this.setState({
           userData: results.data
+        });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
+
+  getSearches(searchItem) {
+    axios.get('/entry', {
+      params: {
+        search: searchItem,
+      },
+    })
+      .then((results) => {
+        this.setState({
+          searchData: results.data,
         });
       })
       .catch((err) => {
@@ -82,7 +99,7 @@ class App extends React.Component {
       <div>
         <GlobalStyle />
         <MainNavBarContainer>
-          <SearchBar />
+          <SearchBar searches={this.state.searchData} getSearches={this.getSearches} />
           <SignInButton onSignInClick={this.onSignInClick} />
           <MenuBar />
           <SignInModal overlayClick={this.overlayClick} active={this.state.active} addUser={this.addUser} />

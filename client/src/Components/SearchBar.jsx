@@ -28,6 +28,7 @@ const SearchBarInput = styled.input`
   outline: none;
   width: 73%;
   min-width: 0;
+  padding-left: 20px;
 `;
 
 const SearchIcon = styled.span`
@@ -39,26 +40,94 @@ const SearchIcon = styled.span`
   float: right;
   position: absolute;
   top: 28px;
-  right: 20%;
+  right: 19%;
+`;
+
+const SearchDropDown = styled.div`
+  position: fixed;
+  top: 9%;
+  left: 17%;
+  z-index: 10;
+  background-color: white;
+  width: 1080px;
+  height: 400px;
+  border: 1px solid black;
+  border-radius: 20px;
+  box-shadow: 0 1px 4px 0 rgba(34, 34, 34, 0.1) inset;
+  border-color: rgba(34, 34, 34, 0.15);
+  padding: 15px;
+`;
+
+const OverLay = styled.div`
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+pointer-events: ${(props) => props.active ? 'all' : 'none'};
+`;
+
+const SearchDropDownHeader = styled.span`
+  font-size: 14px;
+  font-weight: bold;
+`;
+
+const SearchList = styled.ul`
+  list-style: none;
+  padding: 5px;
+`;
+
+const SearchItem = styled.li`
+
 `;
 
 class SearchBar extends React.Component {
   constructor() {
     super();
     this.state = {
-
+      searchItem: '',
+      searching: false,
     };
+    this.handleSearch = this.handleSearch.bind(this);
+    this.searchDropDown = this.searchDropDown.bind(this);
+    this.handleSearchBarClick = this.handleSearchBarClick.bind(this);
+  }
+
+  handleSearch(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+    }, () => this.props.getSearches(this.state.searchItem));
+  }
+
+  searchDropDown() {
+    if (this.state.searching) {
+      return (
+        <SearchDropDown>
+          <SearchDropDownHeader>Popular right now</SearchDropDownHeader>
+          <SearchList>
+
+          </SearchList>
+        </SearchDropDown>
+      );
+    }
+  }
+
+  handleSearchBarClick() {
+    this.setState((prevState) => ({
+      searching: !prevState.searching,
+    }));
   }
 
   render() {
     return (
       <div>
-        {/* htmlFor="search-bar" type="text" name="search-bar" */}
-        <Logo>Etsy</Logo>
-        <SearchBarInput />
+        <Logo>Getsy</Logo>
+        <SearchBarInput onClick={() => this.handleSearchBarClick()} onChange={(e) => this.handleSearch(e)} value={this.state.searchItem} name="searchItem" />
         <SearchIcon>
           <i className="fa fa-search" />
         </SearchIcon>
+        {this.searchDropDown()}
+        <OverLay active={this.state.searching} onClick={() => this.handleSearchBarClick()} />
       </div>
     );
   }
