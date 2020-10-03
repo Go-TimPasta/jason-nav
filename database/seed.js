@@ -1,6 +1,6 @@
 const faker = require('faker');
 const db = require('./index.js');
-//code review
+
 const createProducts = () => {
   const productsArr = [];
   for (let i = 0; i < 100; i++) {
