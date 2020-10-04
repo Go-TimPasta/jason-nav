@@ -32,7 +32,6 @@ class CartButton extends React.Component {
   render() {
     return (
       <ButtonListItem>
-        {/* <CartButtonElement onClick={() => console.log('hello from cart button')}>Cart</CartButtonElement> */}
         <CartButtonElement src="https://img.icons8.com/material-sharp/24/000000/shopping-cart-promotion.png" />
       </ButtonListItem>
     );

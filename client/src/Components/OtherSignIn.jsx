@@ -27,14 +27,21 @@ const Icons = styled.img`
   padding-right: 5px;
 `;
 
-const OtherSignIn = () => {
-  return (
-    <div className="other-sign-in-buttons">
-      <OtherSignInButtons><Icons src="https://img.icons8.com/clouds/45/000000/google-logo.png"/>Continue with Google</OtherSignInButtons>
-      <OtherSignInButtons><Icons src="https://img.icons8.com/clouds/50/000000/facebook-circled.png"/>Continue with Facebook</OtherSignInButtons>
-      <OtherSignInButtons><Icons src="https://img.icons8.com/clouds/50/000000/mac-os.png"/>Continue with Apple</OtherSignInButtons>
-    </div>
-  )
-}
+const OtherSignIn = () => (
+  <div className="other-sign-in-buttons">
+    <OtherSignInButtons>
+      <Icons src="https://img.icons8.com/clouds/45/000000/google-logo.png" />
+      Continue with Google
+    </OtherSignInButtons>
+    <OtherSignInButtons>
+      <Icons src="https://img.icons8.com/clouds/50/000000/facebook-circled.png" />
+      Continue with Facebook
+    </OtherSignInButtons>
+    <OtherSignInButtons>
+      <Icons src="https://img.icons8.com/clouds/50/000000/mac-os.png" />
+      Continue with Apple
+    </OtherSignInButtons>
+  </div>
+);
 
 export default OtherSignIn;

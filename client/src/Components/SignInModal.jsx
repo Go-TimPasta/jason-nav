@@ -77,6 +77,12 @@ const Inputs = styled.input`
   padding-right: 12px;
   width: 100%;
   min-width: 0;
+  &:hover {
+    border-color: black;
+  }
+  &:focus {
+    border-color: black;
+  }
 `;
 
 const SignInCheckBoxContainer = styled.div`
@@ -158,7 +164,6 @@ const SignInSubmitButton = styled.button`
   outline: none;
   font-family: 'Roboto', sans-serif;
   border-radius: 24px;
-  /* display: inline-block; */
   font-size: 16px;
   font-weight: bold;
   line-height: 1.5;
@@ -195,13 +200,13 @@ const OrSpan = styled.span`
 
 const OverLay = styled.div`
   position: fixed;
-  opacity: ${(props) => props.active === 'active' ? '1' : '0'};
+  opacity: ${(props) => (props.active === 'active' ? '1' : '0')};
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: rgb(0, 0, 0, .5);
-  pointer-events: ${(props) => props.active === 'active' ? 'all' : 'none'};
+  pointer-events: ${(props) => (props.active === 'active' ? 'all' : 'none')};
 `;
 
 class SignInModal extends React.Component {
@@ -212,10 +217,12 @@ class SignInModal extends React.Component {
       password: '',
       username: '',
       register: false,
+      searching: false,
     };
     this.onChangeHandler = this.onChangeHandler.bind(this);
     this.handleModulePage = this.handleModulePage.bind(this);
     this.resetInputs = this.resetInputs.bind(this);
+    this.onInputClick = this.onInputClick.bind(this);
   }
 
   onChangeHandler(e) {
@@ -225,11 +232,9 @@ class SignInModal extends React.Component {
   }
 
   handleModulePage() {
-    this.setState((prevState) => {
-      return {
-        register: !prevState.register
-      }
-    });
+    this.setState((prevState) => ({
+      register: !prevState.register,
+    }));
   }
 
   resetInputs() {
@@ -240,23 +245,32 @@ class SignInModal extends React.Component {
     });
   }
 
+  onInputClick() {
+    this.setState({
+      searching: true,
+    });
+  }
+
   render() {
-    if (!this.state.register) {
+    const {
+      email, password, username, register, searching,
+    } = this.state;
+    if (!register) {
       return (
         <div>
           <SignInModalMain active={this.props.active}>
             <SignInModalHeader>
               <SignInModalTitle>Sign In</SignInModalTitle>
-              <RegisterButton onClick={() => {this.handleModulePage(); this.resetInputs();}}>Register</RegisterButton>
+              <RegisterButton onClick={() => { this.handleModulePage(); this.resetInputs(); }}>Register</RegisterButton>
             </SignInModalHeader>
             <div>
               <InputContainers>
                 <InputContainerLabels>Email address</InputContainerLabels>
-                <Inputs type="text" name="email" value={this.state.email} onChange={this.onChangeHandler} />
+                <Inputs searching={searching} type="text" name="email" value={email} onChange={this.onChangeHandler} />
               </InputContainers>
               <InputContainers>
                 <InputContainerLabels>Password</InputContainerLabels>
-                <Inputs type="password" name="password" value={this.state.password} onChange={this.onChangeHandler} />
+                <Inputs searching={searching} type="password" name="password" value={password} onChange={this.onChangeHandler} />
               </InputContainers>
               <SignInCheckBoxContainer>
                 <label className="sign-in-checkbox">Stay signed in
@@ -289,17 +303,17 @@ class SignInModal extends React.Component {
           <div>
             <InputContainers>
               <InputContainerLabels>Email address</InputContainerLabels>
-              <Inputs type="text" name="email" value={this.state.email} onChange={this.onChangeHandler} />
+              <Inputs searching={searching} type="text" name="email" value={email} onChange={this.onChangeHandler} />
             </InputContainers>
             <InputContainers>
               <InputContainerLabels>First Name</InputContainerLabels>
-              <Inputs type="text" name="username" value={this.state.username} onChange={this.onChangeHandler} />
+              <Inputs searching={searching} type="text" name="username" value={username} onChange={this.onChangeHandler} />
             </InputContainers>
             <InputContainers>
               <InputContainerLabels>Password</InputContainerLabels>
-              <Inputs type="password" name="password" value={this.state.password} onChange={this.onChangeHandler} />
+              <Inputs searching={searching} type="password" name="password" value={password} onChange={this.onChangeHandler} />
             </InputContainers>
-            <SignInSubmitButton onClick={() => {this.props.addUser(this.state.username, this.state.password, this.state.email); this.props.overlayClick(); this.resetInputs(); this.handleModulePage();}}>Register</SignInSubmitButton>
+            <SignInSubmitButton onClick={() => {this.props.addUser(username, password, email); this.props.overlayClick(); this.resetInputs(); this.handleModulePage();}}>Register</SignInSubmitButton>
           </div>
           <OrContainer>
             <OrSpan>OR</OrSpan>

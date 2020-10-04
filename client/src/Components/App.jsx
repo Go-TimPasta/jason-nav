@@ -16,7 +16,6 @@ const GlobalStyle = createGlobalStyle`
 const MainNavBarContainer = styled.div`
   padding-left: 180px;
   padding-top: 10px;
-  padding-bottom: 10px;
   border-bottom: 2px solid lightgray;
   position: relative;
 `;
@@ -50,7 +49,7 @@ class App extends React.Component {
     axios.get('/user')
       .then((results) => {
         this.setState({
-          userData: results.data
+          userData: results.data,
         });
       })
       .catch((err) => {
@@ -76,9 +75,9 @@ class App extends React.Component {
 
   addUser(username, password, email) {
     axios.post('/user', {
-      username: username,
-      password: password,
-      email: email
+      username,
+      password,
+      email,
     })
       .then(() => {
         this.getUsers();
@@ -95,14 +94,15 @@ class App extends React.Component {
   }
 
   render() {
+    const { searchData, active } = this.state;
     return (
       <div>
         <GlobalStyle />
         <MainNavBarContainer>
-          <SearchBar searches={this.state.searchData} getSearches={this.getSearches} />
+          <SearchBar searches={searchData} getSearches={this.getSearches} />
           <SignInButton onSignInClick={this.onSignInClick} />
           <MenuBar />
-          <SignInModal overlayClick={this.overlayClick} active={this.state.active} addUser={this.addUser} />
+          <SignInModal overlayClick={this.overlayClick} active={active} addUser={this.addUser} />
         </MainNavBarContainer>
       </div>
     );
