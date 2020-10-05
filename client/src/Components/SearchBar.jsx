@@ -11,44 +11,62 @@ const Logo = styled.label`
 
 const SearchBarInput = styled.input`
   transition: border 200ms ease-out,background 200ms ease-out;
-  box-shadow: 0 1px 4px 0 rgba(34, 34, 34, 0.1) inset;
+  box-shadow: none;
+  background: transparent;
   border-color: ${(props) => (props.isSearching === true ? 'black;' : 'rgba(34, 34, 34, 0.15);')}
   border-style: solid;
   border-width: 1px;
-  border-radius: 40px;
-  font-family: inherit;
   font-size: 16px;
   line-height: 8px;
   height: 48px;
   outline: none;
-  width: 73%;
+  width: 100%;
   min-width: 0;
   padding-left: 20px;
+  border-top-left-radius: 96px;
+  border-bottom-left-radius: 96px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: 0;
   &:hover {
     border-color: black;
   }
 `;
 
 const SearchIcon = styled.span`
+  box-shadow: none;
   color: #222222;
   font-weight: bold;
-  font-size: 23px;
+  font-size: 25px;
   cursor: pointer;
-  text-align: left;
-  float: right;
-  position: absolute;
-  top: 28px;
-  right: 19%;
+  position: relative;
+  padding-right: 21px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 12px;
+  height: 48px;
+  color: #222222;
+  font-weight: bold;
+  font-size: 16px;
+  white-space: nowrap;
   z-index: 10;
+  transition: all 200ms ease-out;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-right-radius: 96px;
+  border-bottom-right-radius: 96px;
+  border: 1px solid rgba(34, 34, 34, 0.15);
+  border-left: 0;
+  border-color: ${(props) => (props.isHovering ? 'black;' : 'none;')}
 `;
 
 const SearchDropDown = styled.div`
   position: fixed;
-  top: 9%;
-  left: 17%;
-  z-index: 10;
+  top: 8%;
+  left: 290px;
+  z-index: 100;
   background-color: white;
-  width: 1080px;
+  width: 1035px;
   height: auto;
   border: 1px solid black;
   border-radius: 20px;
@@ -58,12 +76,12 @@ const SearchDropDown = styled.div`
 `;
 
 const OverLay = styled.div`
-position: fixed;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-pointer-events: ${(props) => (props.active ? 'all' : 'none')};
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: ${(props) => (props.active ? 'all' : 'none')};
 `;
 
 const SearchDropDownHeader = styled.span`
@@ -91,18 +109,56 @@ const FindShop = styled(SearchItem)`
   font-style: italic;
 `;
 
+const SearchAndIconContainer = styled.div`
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  position: relative;
+  display: flex;
+  border-radius: 96px;
+  box-shadow: 1px 2px 4px 0 rgba(34, 34, 34, 0.1) inset;
+`;
+
+const MainSearchBarContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  @media only screen and (min-width: 900px) {
+    flex: 1 1 0% !important;
+  }
+
+  @media only screen and (min-width: 0) {
+    flex-basis: 100% !important;
+  }
+
+  @media only screen and (max-width: 899px) and (min-width: 0) {
+    flex-wrap: wrap;
+  }
+
+  @media only screen and (min-width: 0) {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+`;
+
 class SearchBar extends React.Component {
   constructor() {
     super();
     this.state = {
       searchItem: '',
       searching: false,
+      isHovering: false,
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.searchDropDown = this.searchDropDown.bind(this);
     this.handleSearchBarClick = this.handleSearchBarClick.bind(this);
     this.isNotSearching = this.isNotSearching.bind(this);
     this.findShopNames = this.findShopNames.bind(this);
+    this.handleSearchBarHover = this.handleSearchBarHover.bind(this);
   }
 
   handleSearch(e) {
@@ -150,18 +206,26 @@ class SearchBar extends React.Component {
     }));
   }
 
+  handleSearchBarHover() {
+    this.setState((prevState) => ({
+      isHovering: !prevState.isHovering,
+    }));
+  }
+
   render() {
-    const { searchItem, searching } = this.state;
+    const { searchItem, searching, isHovering } = this.state;
     return (
-      <div>
+      <MainSearchBarContainer>
         <Logo>Getsy</Logo>
-        <SearchBarInput isSearching={searching} onClick={() => { this.handleSearchBarClick(); this.props.getSearches(this.state.searchItem); }} onChange={(e) => this.handleSearch(e)} value={searchItem} name="searchItem" />
-        <SearchIcon>
-          <i className="fa fa-search" />
-        </SearchIcon>
+        <SearchAndIconContainer>
+          <SearchBarInput isSearching={searching} onMouseOver={() => this.handleSearchBarHover()} onMouseLeave={() => this.handleSearchBarHover()} onClick={() => { this.handleSearchBarClick(); this.props.getSearches(this.state.searchItem); }} onChange={(e) => this.handleSearch(e)} value={searchItem} name="searchItem" />
+          <SearchIcon isHovering={isHovering}>
+            <i className="fa fa-search" />
+          </SearchIcon>
+        </SearchAndIconContainer>
         {this.searchDropDown()}
         <OverLay active={searching} onClick={() => this.handleSearchBarClick()} />
-      </div>
+      </MainSearchBarContainer>
     );
   }
 }

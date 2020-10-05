@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const BoldItem = styled.li`
   font-family: "Graphik Webfont";
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   padding: 6px 0 12px 0;

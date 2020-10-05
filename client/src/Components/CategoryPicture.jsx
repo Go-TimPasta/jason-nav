@@ -35,8 +35,8 @@ const ItalicSpan = styled.span`
 const MenuCategoryPicture = (props) => (
   <PictureContainer>
     <CategoryPicture src="https://i.etsystatic.com/11266858/d/il/ef6883/2581486117/il_340x270.2581486117_4ljl.jpg?version=0" />
-    <ItalicSpan>Editors' Picks</ItalicSpan>
     <PicListContainer>
+      <ItalicSpan>Editors' Picks</ItalicSpan>
       <BoldCategoryItem item={props.more} />
     </PicListContainer>
   </PictureContainer>

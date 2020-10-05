@@ -3,19 +3,18 @@ import styled from 'styled-components';
 import CartButton from './CartButton.jsx';
 
 const SignInAndCartContainer = styled.div`
-  float: right;
-  position: absolute;
-  right: 9%;
-  top: 16%;
+  padding-top: 10px;
 `;
 
 const ButtonList = styled.ul`
   list-style: none;
   display: flex;
+  padding: 0;
 `;
 
 const ButtonListItem = styled.li`
   padding-left: 15px;
+  width: 100px;
 `;
 
 const SignInButtonElement = styled.button`

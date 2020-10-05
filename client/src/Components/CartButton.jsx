@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const CartButtonElement = styled.img`
-  // font-family: "Graphik Webfont";
   background: none;
   border: none;
   font: inherit;

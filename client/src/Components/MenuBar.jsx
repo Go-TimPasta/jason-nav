@@ -8,27 +8,30 @@ import NotBoldCategoryItem from './NotBoldCategoryItem.jsx';
 const MenuBarContainer = styled.div`
   display: flex;
   margin-right: 100px;
+  max-width: 1400px;
+  margin: 0 auto;
 `;
 
 const MenuBarList = styled.ul`
   display: flex;
   justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
   width: 100%;
   list-style: none;
-  justify-content: center;
-  // max-width: 1400px;
-  padding-left: 4px;
+  padding-left: 52px;
+  padding-right: 48px;
+  padding-top: 11px;
 `;
 
 const MenuBarListEntry = styled.li`
-  padding-top: 20px;
-  padding-right: 61px;
   padding-bottom: 10px;
   font-family: "Graphik Webfont";
   line-height: 18px;
   color: #222222;
   font-size: 14px;
   cursor: pointer;
+  z-index: 1;
   &:hover {
     text-decoration: underline;
   }
@@ -36,8 +39,8 @@ const MenuBarListEntry = styled.li`
 
 const MenuDropDown = styled.div`
   position: fixed;
-  top: 120px;
-  left: 11%;
+  top: 100px;
+  left: 178px;
   z-index: 100;
   background-color: white;
   width: 1328px;
@@ -48,12 +51,11 @@ const MenuDropDown = styled.div`
   border-top: 1px solid lightgrey;
   border-radius: 5px;
   border-color: rgba(34, 34, 34, 0.10);
-  // padding: 10px;
 `;
 
 const MenuContainer = styled.div`
-display: grid;
-grid-template-columns: 30% auto;
+  display: grid;
+  grid-template-columns: 30% auto;
 `;
 
 const OverLay = styled.div`
@@ -117,42 +119,13 @@ const MenuDropDownRightContainer = styled.div`
 
 const SubCategoriesContainer = styled.div`
   display: flex;
-  gap: 120px;
+  justify-content: space-between;
 `;
 
 const CategoryList = styled.ul`
   padding: 10px;
   list-style: none;
 `;
-
-// const PicListContainer = styled(CategoryList)`
-//   padding: 0px;
-// `;
-
-// const CategoryPicture = styled.img`
-// max-height: 220px;
-// width: auto;
-// border-radius: 3px;
-// `;
-
-// const PictureContainer = styled.div`
-//   cursor: pointer;
-//   padding: 10px;
-//   margin: 10px;
-//   &:hover {
-//     transition: transform 200ms cubic-bezier(0.345, 0.115, 0.135, 1.42), opacity 150ms easy-out, border-color 200ms ease-out;
-//     border-radius: 9px;
-//     background: #FFFFFF;
-//     box-shadow: 0 2px 18px rgba(34, 34, 34, 0.2);
-//   }
-// `;
-
-// const ItalicSpan = styled.span`
-//   font-family: "Graphik Webfont";
-//   font-size: 15px;
-//   font-style: italic;
-//   color: #616161;
-// `;
 
 class MenuBar extends React.Component {
   constructor() {
@@ -299,7 +272,7 @@ class MenuBar extends React.Component {
           </MenuBarList>
           {this.isHovering()}
         </MenuBarContainer>
-        <OverLay hovering={hovering} onMouseOver={() => this.handleHoverLeave()} />
+        <OverLay hovering={hovering} onMouseOver={() => { this.handleHoverLeave(); this.handleHoverSubItem('Accessories'); }} />
       </div>
     );
   }
