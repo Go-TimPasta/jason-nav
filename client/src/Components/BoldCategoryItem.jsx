@@ -5,6 +5,7 @@ const BoldItem = styled.li`
   font-family: "Graphik Webfont";
   font-size: 16px;
   font-weight: bold;
+  background: transparent;
   cursor: pointer;
   padding: 6px 0 12px 0;
   &:hover {

@@ -14,8 +14,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const MainNavBarContainer = styled.div`
-  // padding-left: 180px;
-  // padding-top: 10px;
   text-align: left;
   margin: 0 auto;
   box-sizing: border-box;

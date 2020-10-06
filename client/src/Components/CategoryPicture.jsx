@@ -32,12 +32,12 @@ const ItalicSpan = styled.span`
   color: #616161;
 `;
 
-const MenuCategoryPicture = (props) => (
+const MenuCategoryPicture = ({ more, url }) => (
   <PictureContainer>
-    <CategoryPicture src="https://i.etsystatic.com/11266858/d/il/ef6883/2581486117/il_340x270.2581486117_4ljl.jpg?version=0" />
+    <CategoryPicture src={url} />
     <PicListContainer>
       <ItalicSpan>Editors' Picks</ItalicSpan>
-      <BoldCategoryItem item={props.more} />
+      <BoldCategoryItem item={more} />
     </PicListContainer>
   </PictureContainer>
 );

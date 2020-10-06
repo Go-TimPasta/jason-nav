@@ -16,7 +16,6 @@ const SearchBarInput = styled.input`
   border-color: ${(props) => (props.isSearching === true ? 'black;' : 'rgba(34, 34, 34, 0.15);')}
   border-style: solid;
   border-width: 1px;
-  font-size: 16px;
   line-height: 8px;
   height: 48px;
   outline: none;
@@ -62,11 +61,11 @@ const SearchIcon = styled.span`
 
 const SearchDropDown = styled.div`
   position: fixed;
-  top: 8%;
+  top: 7%;
   left: 290px;
-  z-index: 100;
+  min-width: 1035px;
+  z-index: 104;
   background-color: white;
-  width: 1035px;
   height: auto;
   border: 1px solid black;
   border-radius: 20px;
@@ -120,6 +119,8 @@ const SearchAndIconContainer = styled.div`
   display: flex;
   border-radius: 96px;
   box-shadow: 1px 2px 4px 0 rgba(34, 34, 34, 0.1) inset;
+  // border: 1px solid rgba(34, 34, 34, 0.15);
+  background: ${(props) => (props.searching ? 'none;' : 'rgba(34, 34, 34, 0.07);')}
 `;
 
 const MainSearchBarContainer = styled.div`
@@ -217,8 +218,8 @@ class SearchBar extends React.Component {
     return (
       <MainSearchBarContainer>
         <Logo>Getsy</Logo>
-        <SearchAndIconContainer>
-          <SearchBarInput isSearching={searching} onMouseOver={() => this.handleSearchBarHover()} onMouseLeave={() => this.handleSearchBarHover()} onClick={() => { this.handleSearchBarClick(); this.props.getSearches(this.state.searchItem); }} onChange={(e) => this.handleSearch(e)} value={searchItem} name="searchItem" />
+        <SearchAndIconContainer searching={searching}>
+          <SearchBarInput placeholder="Search for anything" isSearching={searching} onMouseOver={() => this.handleSearchBarHover()} onMouseLeave={() => this.handleSearchBarHover()} onClick={() => { this.handleSearchBarClick(); this.props.getSearches(this.state.searchItem); }} onChange={(e) => this.handleSearch(e)} value={searchItem} name="searchItem" />
           <SearchIcon isHovering={isHovering}>
             <i className="fa fa-search" />
           </SearchIcon>

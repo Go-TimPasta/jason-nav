@@ -10,7 +10,7 @@ const SignInModalMain = styled.div`
   transform: ${(props) => (props.active === 'active' ? 'translate(-50%, -50%) scale(1)' : 'translate(-50%, -50%) scale(0)')};
   border: 1px solid black;
   border-radius: 5px;
-  z-index: 10;
+  z-index: 120;
   background-color: white;
   width: 360px;
   max-width: 70%;
@@ -171,7 +171,7 @@ const SignInSubmitButton = styled.button`
   min-width: 48px;
   text-align: center;
   vertical-align: middle;
-  z-index: 10;
+  z-index: 120;
   width: 91%;
   margin: 15px;
 
@@ -206,6 +206,7 @@ const OverLay = styled.div`
   right: 0;
   bottom: 0;
   background-color: rgb(0, 0, 0, .5);
+  z-index: 119;
   pointer-events: ${(props) => (props.active === 'active' ? 'all' : 'none')};
 `;
 
