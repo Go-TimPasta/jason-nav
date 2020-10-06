@@ -34,6 +34,10 @@ const Header = styled.div`
     padding-left: 36px;
     padding-right: 36px;
   }
+
+  @media only screen and (max-width: 899px) and (min-width: 0) {
+    flex-wrap: wrap;
+  }
 `;
 
 class App extends React.Component {
@@ -116,8 +120,8 @@ class App extends React.Component {
         <GlobalStyle />
         <MainNavBarContainer>
           <Header>
-            <SearchBar searches={searchData} getSearches={this.getSearches} />
-            <SignInButton onSignInClick={this.onSignInClick} />
+            <SearchBar onSignInClick={this.onSignInClick} searches={searchData} getSearches={this.getSearches} />
+            {/* <SignInButton onSignInClick={this.onSignInClick} /> */}
           </Header>
           <MenuBar />
           <SignInModal overlayClick={this.overlayClick} active={active} addUser={this.addUser} />
