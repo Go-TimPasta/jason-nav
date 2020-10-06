@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactTooltip from 'react-tooltip';
 
 const CartButtonElement = styled.img`
   background: none;
@@ -31,7 +32,8 @@ class CartButton extends React.Component {
   render() {
     return (
       <ButtonListItem>
-        <CartButtonElement src="https://img.icons8.com/material-sharp/24/000000/shopping-cart-promotion.png" />
+        <CartButtonElement data-tip="Cart" src="https://img.icons8.com/material-sharp/24/000000/shopping-cart-promotion.png" />
+        <ReactTooltip place="bottom" effect="solid" backgroundColor="black" />
       </ButtonListItem>
     );
   }

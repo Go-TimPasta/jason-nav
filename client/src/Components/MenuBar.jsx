@@ -64,19 +64,6 @@ const MenuDropDown = styled.div`
   @media only screen and (max-width: 939px) {
     top: 118px;
   }
-
-  @media only screen and (min-width: 900px) {
-    padding-left: 18px;
-    padding-right: 18px;
-  }
-  @media only screen and (min-width: 640px) {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-  @media only screen and (min-width: 0) {
-    padding-left: 6px;
-    padding-right: 6px;
-  }
 `;
 
 const MenuContainer = styled.div`
