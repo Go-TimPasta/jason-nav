@@ -6,12 +6,10 @@ import SignInButton from './SignInButton.jsx';
 import MenuBar from './MenuBar.jsx';
 import SignInModal from './SignInModal.jsx';
 import HamburgerNavBar from './HamburgerNavBar.jsx';
-//hello
-const GlobalStyle = createGlobalStyle`
-  * {
-    margin: 0;
-    box-sizing: border-box;
-  }
+
+const GlobalStyle = styled.div`
+  margin: 0;
+  box-sizing: border-box;
 `;
 
 const MainNavBarContainer = styled.div`
@@ -132,8 +130,7 @@ class App extends React.Component {
   render() {
     const { searchData, active, HBnavbar } = this.state;
     return (
-      <div>
-        <GlobalStyle />
+      <div style={{margin: 0, boxSizing: 'borderBox'}}>
         <MainNavBarContainer>
           <Header>
             <SearchBar handleBurgerClick={this.handleBurgerClick} onSignInClick={this.onSignInClick} searches={searchData} getSearches={this.getSearches} />
