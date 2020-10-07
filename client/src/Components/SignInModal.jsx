@@ -274,10 +274,10 @@ class SignInModal extends React.Component {
                 <Inputs searching={searching} type="password" name="password" value={password} onChange={this.onChangeHandler} />
               </InputContainers>
               <SignInCheckBoxContainer>
-                <label className="sign-in-checkbox">Stay signed in
-                  <input className="sign-in-checkbox-input" type="checkbox" />
-                  <span className="checkmark" />
-                </label>
+                <SignInCheckBox className="sign-in-checkbox">Stay signed in
+                  <SignInCheckBoxInput className="sign-in-checkbox-input" type="checkbox" />
+                  <Checkmark className="checkmark" />
+                </SignInCheckBox>
                 <HelperLinksForgot><a href="#">Forgot your password?</a></HelperLinksForgot>
               </SignInCheckBoxContainer>
               <ButtonAndTroubleContainer>
