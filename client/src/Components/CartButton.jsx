@@ -11,6 +11,8 @@ const CartButtonElement = styled.img`
   transition-duration: 0.4s;
   border-radius: 22px;
   padding: 13px;
+  box-sizing: border-box;
+  margin: 0;
   &:hover {
     opacity: 1;
     background-color: lightgrey;
@@ -19,6 +21,8 @@ const CartButtonElement = styled.img`
 
 const ButtonListItem = styled.li`
   padding-left: 15px;
+  box-sizing: border-box;
+  margin: 0;
 `;
 
 class CartButton extends React.Component {

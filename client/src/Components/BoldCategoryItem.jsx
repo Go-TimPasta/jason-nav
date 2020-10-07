@@ -8,6 +8,8 @@ const BoldItem = styled.li`
   background: transparent;
   cursor: pointer;
   padding: 6px 0 12px 0;
+  box-sizing: border-box;
+  margin: 0;
   &:hover {
     text-decoration: underline;
   }

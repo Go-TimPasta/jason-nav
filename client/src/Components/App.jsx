@@ -2,15 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import styled, { createGlobalStyle } from 'styled-components';
 import SearchBar from './SearchBar.jsx';
-import SignInButton from './SignInButton.jsx';
 import MenuBar from './MenuBar.jsx';
 import SignInModal from './SignInModal.jsx';
 import HamburgerNavBar from './HamburgerNavBar.jsx';
-
-const GlobalStyle = styled.div`
-  margin: 0;
-  box-sizing: border-box;
-`;
 
 const MainNavBarContainer = styled.div`
   text-align: left;
@@ -19,6 +13,7 @@ const MainNavBarContainer = styled.div`
   width: 100%;
   border-bottom: 2px solid lightgray;
   position: relative;
+  box-sizing: border-box;
 `;
 
 const Header = styled.div`
@@ -130,7 +125,9 @@ class App extends React.Component {
   render() {
     const { searchData, active, HBnavbar } = this.state;
     return (
-      <div style={{margin: 0, boxSizing: 'borderBox'}}>
+      // style={{margin: 0, boxSizing: 'border-box'}}
+      <div>
+        {/* <GlobalStyle /> */}
         <MainNavBarContainer>
           <Header>
             <SearchBar handleBurgerClick={this.handleBurgerClick} onSignInClick={this.onSignInClick} searches={searchData} getSearches={this.getSearches} />

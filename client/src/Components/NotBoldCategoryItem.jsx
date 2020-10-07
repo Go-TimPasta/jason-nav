@@ -7,6 +7,8 @@ const NotBoldItem = styled.li`
   padding-bottom: 10px;
   list-style: none;
   cursor: pointer;
+  box-sizing: border-box;
+  margin: 0;
   &:hover {
     text-decoration: underline;
   }

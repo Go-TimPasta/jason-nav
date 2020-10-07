@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SecondPointer = styled.img`
+  box-sizing: border-box;
+  margin: 0;
   float: right;
   padding-right: 20px;
   padding-top: 5px;

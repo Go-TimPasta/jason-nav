@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import SignInButton from './SignInButton.jsx';
 
 const Logo = styled.label`
+  box-sizing: border-box;
+  margin: 0;
   font-family: Graphik Webfont;
   font-size: 40px;
   color: #F1641E;
@@ -12,6 +14,8 @@ const Logo = styled.label`
 `;
 
 const SearchBarInput = styled.input`
+  box-sizing: border-box;
+  margin: 0;
   transition: border 200ms ease-out,background 200ms ease-out;
   box-shadow: none;
   background: transparent;
@@ -35,6 +39,8 @@ const SearchBarInput = styled.input`
 `;
 
 const SearchIcon = styled.span`
+  box-sizing: border-box;
+  margin: 0;
   box-shadow: none;
   color: #222222;
   font-weight: bold;
@@ -62,6 +68,8 @@ const SearchIcon = styled.span`
 `;
 
 const SearchDropDown = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   display: block;
   position: absolute;
   top: 100%;
@@ -81,6 +89,8 @@ const SearchDropDown = styled.div`
 `;
 
 const OverLay = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -90,17 +100,23 @@ const OverLay = styled.div`
 `;
 
 const SearchDropDownHeader = styled.span`
+  box-sizing: border-box;
+  margin: 0;
   font-size: 14px;
   font-weight: bold;
   padding-left: 15px;
 `;
 
 const SearchList = styled.ul`
+  box-sizing: border-box;
+  margin: 0;
   list-style: none;
   padding: 5px;
 `;
 
 const SearchItem = styled.li`
+  box-sizing: border-box;
+  margin: 0;
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
@@ -110,11 +126,14 @@ const SearchItem = styled.li`
 `;
 
 const FindShop = styled(SearchItem)`
+  box-sizing: border-box;
+  margin: 0;
   margin-bottom: 7px;
   font-style: italic;
 `;
 
 const SearchAndIconContainer = styled.div`
+  box-sizing: border-box;
   margin-top: 10px;
   width: 100%;
   display: flex;
@@ -138,6 +157,7 @@ const SearchAndIconContainer = styled.div`
 `;
 
 const MainSearchBarContainer = styled.div`
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   margin: 0 auto;
@@ -167,6 +187,8 @@ const MainSearchBarContainer = styled.div`
 `;
 
 const HamburgerButton = styled.button`
+  box-sizing: border-box;
+  margin: 0;
   cursor: pointer;
   background: none;
   border: none;
@@ -186,6 +208,8 @@ const HamburgerButton = styled.button`
 `;
 
 const HamburgerContainer = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   @media only screen and (min-width: 0) {
       order: 2 !important;
   }

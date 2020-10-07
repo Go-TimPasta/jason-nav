@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import CartButton from './CartButton.jsx';
 
 const SignInAndCartContainer = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   padding-top: 10px;
   @media only screen and (min-width: 0) {
     flex-shrink: 0 !important;
@@ -10,17 +12,23 @@ const SignInAndCartContainer = styled.div`
 `;
 
 const ButtonList = styled.ul`
+  box-sizing: border-box;
+  margin: 0;
   list-style: none;
   display: flex;
   padding: 0;
 `;
 
 const ButtonListItem = styled.li`
+  box-sizing: border-box;
+  margin: 0;
   padding-left: 15px;
   width: 100px;
 `;
 
 const SignInButtonElement = styled.button`
+  box-sizing: border-box;
+  margin: 0;
   font-family: "Graphik Webfont";
   background: none;
   border: none;
