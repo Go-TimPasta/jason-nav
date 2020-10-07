@@ -142,6 +142,7 @@ const MainSearchBarContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   justify-content: space-between;
+  z-index: 200;
   @media only screen and (min-width: 900px) {
     flex: 1 1 0% !important;
   }
@@ -277,7 +278,7 @@ class SearchBar extends React.Component {
       <MainSearchBarContainer>
         <Logo>Getsy</Logo>
         <HamburgerContainer>
-          <HamburgerButton><img src="https://img.icons8.com/android/22/000000/menu.png"/></HamburgerButton>
+          <HamburgerButton onClick={() => this.props.handleBurgerClick()}><img src="https://img.icons8.com/android/22/000000/menu.png"/></HamburgerButton>
           <SearchAndIconContainer searching={searching}>
             <SearchBarInput placeholder="Search for anything" isSearching={searching} onMouseOver={() => this.handleSearchBarHover()} onMouseLeave={() => this.handleSearchBarHover()} onClick={() => { this.handleSearchBarClick(); this.props.getSearches(this.state.searchItem); }} onChange={(e) => this.handleSearch(e)} value={searchItem} name="searchItem" />
             <SearchIcon isHovering={isHovering}>
