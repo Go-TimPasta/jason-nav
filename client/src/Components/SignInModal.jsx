@@ -206,7 +206,7 @@ const OverLay = styled.div`
   right: 0;
   bottom: 0;
   background-color: rgb(0, 0, 0, .5);
-  z-index: 119;
+  z-index: 240;
   pointer-events: ${(props) => (props.active === 'active' ? 'all' : 'none')};
 `;
 

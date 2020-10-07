@@ -142,7 +142,7 @@ const MainSearchBarContainer = styled.div`
   align-items: center;
   margin: 0 auto;
   justify-content: space-between;
-  z-index: 200;
+  z-index: 205;
   @media only screen and (min-width: 900px) {
     flex: 1 1 0% !important;
   }

@@ -28,7 +28,7 @@ const MenuBarList = styled.ul`
   padding-left: 52px;
   padding-right: 48px;
   padding-top: 11px;
-  z-index: 102;
+  z-index: 202;
 `;
 
 const MenuBarListEntry = styled.li`
@@ -49,7 +49,7 @@ const MenuDropDown = styled.div`
   max-width: 1400px;
   top: 100px;
   height: auto;
-  z-index: 100;
+  z-index: 202;
   background-color: white;
   border-left: 1px solid black;
   border-right: 1px solid black;
@@ -73,6 +73,7 @@ const MenuContainer = styled.div`
 
 const OverLay = styled.div`
   position: fixed;
+  z-index: 200;
   top: 0;
   left: 0;
   right: 0;
