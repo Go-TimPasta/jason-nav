@@ -7,6 +7,8 @@ const HamburgerNavBarContainer = styled.div`
   position: fixed;
   width: 100%;
   background: white;
+  box-sizing: border-box;
+  margin: 0;
   z-index: ${(props) => (props.HBnavbar ? '400' : '0')};
   opacity: ${(props) => (props.HBnavbar ? '1' : '0')};
   @media only screen and (min-width: 640px) {
@@ -18,6 +20,8 @@ const HamburgerNavBarContainer = styled.div`
 const Header = styled.div`
   display: flex;
   justify-content: space-between;
+  box-sizing: border-box;
+  margin: 0;
   @media only screen and (min-width: 640px)
   .ui-toolkit .pt-md-4 {
       padding-top: 24px;
@@ -33,11 +37,13 @@ const Header = styled.div`
 `;
 
 const Logo = styled.div`
-font-family: Graphik Webfont;
+  font-family: Graphik Webfont;
   color: #F1641E;
   cursor: pointer;
   font-size: 30px;
   padding: 15px;
+  box-sizing: border-box;
+  margin: 0;
 
   @media only screen and (min-width: 640px)
   .ui-toolkit .pl-md-0 {
@@ -51,6 +57,8 @@ font-family: Graphik Webfont;
 
 const XbuttonContainer = styled.div`
   padding: 15px;
+  box-sizing: border-box;
+  margin: 0;
   @media only screen and (min-width: 640px)
   .ui-toolkit .pr-md-2 {
       padding-right: 12px;
@@ -63,6 +71,8 @@ const XbuttonContainer = styled.div`
 
 const OverLay = styled.div`
   position: fixed;
+  box-sizing: border-box;
+  margin: 0;
   opacity: ${(props) => (props.HBnavbar ? '1' : '0')};
   top: 0;
   left: 0;

@@ -4,6 +4,8 @@ import OtherSignIn from './OtherSignIn.jsx';
 import Policy from './Policy.jsx';
 
 const SignInModalMain = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -18,6 +20,8 @@ const SignInModalMain = styled.div`
 `;
 
 const SignInModalHeader = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   padding: 15px;
   display: flex;
   justify-content: space-between;
@@ -28,12 +32,16 @@ const SignInModalHeader = styled.div`
 `;
 
 const SignInModalTitle = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 26px;
   line-height: 36px;
 `;
 
 const RegisterButton = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   cursor: pointer;
   border: 2px solid black;
   border-radius: 30px;
@@ -44,10 +52,13 @@ const RegisterButton = styled.div`
 `;
 
 const InputContainers = styled.div`
+  box-sizing: border-box;
   margin: 13px;
 `;
 
 const InputContainerLabels = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   display: block;
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -56,6 +67,8 @@ const InputContainerLabels = styled.div`
 `;
 
 const Inputs = styled.input`
+  box-sizing: border-box;
+  margin: 0;
   transition: border 200ms ease-out,background 200ms ease-out;
   appearance: none;
   background: #FFFFFF;
@@ -86,12 +99,16 @@ const Inputs = styled.input`
 `;
 
 const SignInCheckBoxContainer = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
 const SignInCheckBox = styled.label`
+  box-sizing: border-box;
+  margin: 0;
   font-family: 'Roboto', sans-serif;
   display: block;
   position: relative;
@@ -108,6 +125,8 @@ const SignInCheckBox = styled.label`
 `;
 
 const SignInCheckBoxInput = styled.input`
+  box-sizing: border-box;
+  margin: 0;
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -117,6 +136,8 @@ const SignInCheckBoxInput = styled.input`
 `;
 
 const Checkmark = styled.span`
+  box-sizing: border-box;
+  margin: 0;
   position: absolute;
   top: 0;
   left: 0;
@@ -135,6 +156,8 @@ const Checkmark = styled.span`
 `;
 
 const HelperLinksForgot = styled.span`
+  box-sizing: border-box;
+  margin: 0;
   text-decoration: underline;
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
@@ -149,6 +172,8 @@ const HelperLinksTrouble = styled(HelperLinksForgot)`
 `;
 
 const ButtonAndTroubleContainer = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -156,6 +181,7 @@ const ButtonAndTroubleContainer = styled.div`
 `;
 
 const SignInSubmitButton = styled.button`
+  box-sizing: border-box;
   background: none;
   background-color: black;
   border: none;
@@ -182,6 +208,7 @@ const SignInSubmitButton = styled.button`
 `;
 
 const OrContainer = styled.div`
+  box-sizing: border-box;
   margin-bottom: 24px;
   margin-top: 24px;
   border-bottom: 1px solid #E1E3DF;
@@ -190,6 +217,8 @@ const OrContainer = styled.div`
 `;
 
 const OrSpan = styled.span`
+  box-sizing: border-box;
+  margin: 0;
   text-align: center;
   line-height: 0;
   background-color: white;
@@ -199,6 +228,8 @@ const OrSpan = styled.span`
 `;
 
 const OverLay = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   position: fixed;
   opacity: ${(props) => (props.active === 'active' ? '1' : '0')};
   top: 0;

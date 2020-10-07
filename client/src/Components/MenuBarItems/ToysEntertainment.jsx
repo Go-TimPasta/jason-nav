@@ -5,16 +5,22 @@ import BoldCategoryItem from '../BoldCategoryItem.jsx';
 import NotBoldCategoryItem from '../NotBoldCategoryItem.jsx';
 
 const SubCategoriesContainer = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   display: flex;
   justify-content: space-between;
 `;
 
 const CategoryList = styled.ul`
+  box-sizing: border-box;
+  margin: 0;
   padding: 10px;
   list-style: none;
 `;
 
 const MenuDropDownTitle = styled.span`
+  box-sizing: border-box;
+  margin: 0;
   font-family: "Graphik Webfont";
   font-size: 14px;
   font-weight: bold;
@@ -25,6 +31,8 @@ const MenuDropDownTitle = styled.span`
   }
 `;
 const Pointer = styled.img`
+  box-sizing: border-box;
+  margin: 0;
   padding-left: 4px;
   transition: 0.3s;
   cursor: pointer;

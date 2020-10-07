@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const OtherSignInButtons = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   background: none;
   background-color: white;
   border: 2px solid black;
@@ -24,6 +26,8 @@ const OtherSignInButtons = styled.div`
 `;
 
 const Icons = styled.img`
+  box-sizing: border-box;
+  margin: 0;
   padding-right: 5px;
 `;
 

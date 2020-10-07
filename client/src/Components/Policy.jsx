@@ -2,10 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const PolicyContainer = styled.div`
+  box-sizing: border-box;
   margin: 20px;
 `;
 
 const NavBarPolicy = styled.span`
+  box-sizing: border-box;
+  margin: 0;
   font-family: 'Roboto', sans-serif;
   font-size: 13px;
   line-height: 18px;

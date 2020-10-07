@@ -10,6 +10,7 @@ import ArtCollectibles from './MenuBarItems/ArtCollectibles.jsx'
 import CraftSupplies from './MenuBarItems/CraftSupplies.jsx'
 
 const MenuBarContainer = styled.div`
+  box-sizing: border-box;
   display: flex;
   max-width: 1400px;
   margin: 0 auto;
@@ -19,6 +20,8 @@ const MenuBarContainer = styled.div`
 `;
 
 const MenuBarList = styled.ul`
+  box-sizing: border-box;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   max-width: 1400px;
@@ -32,6 +35,8 @@ const MenuBarList = styled.ul`
 `;
 
 const MenuBarListEntry = styled.li`
+  box-sizing: border-box;
+  margin: 0;
   padding-bottom: 10px;
   font-family: "Graphik Webfont";
   line-height: 18px;
@@ -45,9 +50,11 @@ const MenuBarListEntry = styled.li`
 `;
 
 const MenuDropDown = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   position: absolute;
   max-width: 1400px;
-  top: 130px;
+  top: 100px;
   height: auto;
   z-index: 202;
   background-color: white;
@@ -67,11 +74,15 @@ const MenuDropDown = styled.div`
 `;
 
 const MenuContainer = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   display: grid;
   grid-template-columns: 30% auto;
 `;
 
 const OverLay = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   position: fixed;
   z-index: 200;
   top: 0;
@@ -82,15 +93,21 @@ const OverLay = styled.div`
 `;
 
 const MenuDropDownLeftContainer = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   border-right: 1px solid lightgrey;
 `;
 
 const MenuDropDownHeader = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   cursor: pointer;
   padding: 12px 0 12px 10px;
 `;
 
 const Pointer = styled.img`
+  box-sizing: border-box;
+  margin: 0;
   padding-left: 4px;
   transition: 0.3s;
   cursor: pointer;
@@ -100,6 +117,8 @@ const Pointer = styled.img`
 `;
 
 const MenuDropDownTitle = styled.span`
+  box-sizing: border-box;
+  margin: 0;
   font-family: "Graphik Webfont";
   font-size: 14px;
   font-weight: bold;
@@ -111,11 +130,15 @@ const MenuDropDownTitle = styled.span`
 `;
 
 const MenuSubItemList = styled.ul`
+  box-sizing: border-box;
+  margin: 0;
   list-style: none;
   padding: 0;
 `;
 
 const MenuSubItems = styled.li`
+  box-sizing: border-box;
+  margin: 0;
   padding: 10px 0 10px 10px;
   font-family: "Graphik Webfont";
   width: 100%;
@@ -128,6 +151,8 @@ const MenuSubItems = styled.li`
 `;
 
 const MenuDropDownRightContainer = styled.div`
+  box-sizing: border-box;
+  margin: 0;
   padding: 0 0 12px 10px;
 `;
 

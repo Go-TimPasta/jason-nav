@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import BoldCategoryItem from './BoldCategoryItem.jsx';
 
 const PictureContainer = styled.div`
+  box-sizing: border-box;
   cursor: pointer;
   padding: 10px;
   margin: 10px;
@@ -15,17 +16,23 @@ const PictureContainer = styled.div`
 `;
 
 const CategoryPicture = styled.img`
-max-height: 220px;
-width: auto;
-border-radius: 3px;
+  box-sizing: border-box;
+  margin: 0;
+  max-height: 220px;
+  width: auto;
+  border-radius: 3px;
 `;
 
 const PicListContainer = styled.ul`
+box-sizing: border-box;
+  margin: 0;
   padding: 0px;
   list-style: none;
 `;
 
 const ItalicSpan = styled.span`
+  box-sizing: border-box;
+  margin: 0;
   font-family: "Graphik Webfont";
   font-size: 15px;
   font-style: italic;
