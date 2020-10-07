@@ -47,7 +47,7 @@ const MenuBarListEntry = styled.li`
 const MenuDropDown = styled.div`
   position: absolute;
   max-width: 1400px;
-  top: 100px;
+  top: 130px;
   height: auto;
   z-index: 202;
   background-color: white;
