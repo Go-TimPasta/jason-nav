@@ -10,7 +10,7 @@ const SignInModalMain = styled.div`
   transform: ${(props) => (props.active === 'active' ? 'translate(-50%, -50%) scale(1)' : 'translate(-50%, -50%) scale(0)')};
   border: 1px solid black;
   border-radius: 5px;
-  z-index: 120;
+  z-index: 300;
   background-color: white;
   width: 360px;
   max-width: 70%;

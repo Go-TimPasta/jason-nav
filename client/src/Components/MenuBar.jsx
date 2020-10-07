@@ -11,9 +11,11 @@ import CraftSupplies from './MenuBarItems/CraftSupplies.jsx'
 
 const MenuBarContainer = styled.div`
   display: flex;
-  margin-right: 100px;
   max-width: 1400px;
   margin: 0 auto;
+  @media only screen and (max-width: 900px) {
+    display: none !important;
+  }
 `;
 
 const MenuBarList = styled.ul`
@@ -43,19 +45,25 @@ const MenuBarListEntry = styled.li`
 `;
 
 const MenuDropDown = styled.div`
-  position: fixed;
+  position: absolute;
+  max-width: 1400px;
   top: 100px;
-  left: 178px;
-  width: 1328px;
+  height: auto;
   z-index: 100;
   background-color: white;
-  height: auto;
   border-left: 1px solid black;
   border-right: 1px solid black;
   border-bottom: 1px solid black;
   border-top: 1px solid lightgrey;
   border-radius: 5px;
   border-color: rgba(34, 34, 34, 0.10);
+  @media only screen and (min-width: 0) {
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 939px) {
+    top: 118px;
+  }
 `;
 
 const MenuContainer = styled.div`

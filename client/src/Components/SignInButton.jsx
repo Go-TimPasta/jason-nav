@@ -4,6 +4,9 @@ import CartButton from './CartButton.jsx';
 
 const SignInAndCartContainer = styled.div`
   padding-top: 10px;
+  @media only screen and (min-width: 0) {
+    flex-shrink: 0 !important;
+  }
 `;
 
 const ButtonList = styled.ul`

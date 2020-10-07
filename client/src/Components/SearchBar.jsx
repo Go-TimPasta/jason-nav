@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import SignInButton from './SignInButton.jsx';
 
 const Logo = styled.label`
   font-family: Graphik Webfont;
@@ -7,6 +8,7 @@ const Logo = styled.label`
   color: #F1641E;
   padding-right: 10px;
   cursor: pointer;
+  padding-left: 5px;
 `;
 
 const SearchBarInput = styled.input`
@@ -60,18 +62,22 @@ const SearchIcon = styled.span`
 `;
 
 const SearchDropDown = styled.div`
-  position: fixed;
-  top: 7%;
-  left: 290px;
-  min-width: 1035px;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  max-height: inherit;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0px !important;
   z-index: 104;
   background-color: white;
-  height: auto;
   border: 1px solid black;
   border-radius: 20px;
   box-shadow: 0 1px 4px 0 rgba(34, 34, 34, 0.1) inset;
   border-color: rgba(34, 34, 34, 0.15);
   padding-top: 8px;
+  margin-top: 12px;
 `;
 
 const OverLay = styled.div`
@@ -119,14 +125,24 @@ const SearchAndIconContainer = styled.div`
   display: flex;
   border-radius: 96px;
   box-shadow: 1px 2px 4px 0 rgba(34, 34, 34, 0.1) inset;
-  // border: 1px solid rgba(34, 34, 34, 0.15);
   background: ${(props) => (props.searching ? 'none;' : 'rgba(34, 34, 34, 0.07);')}
+
+  @media only screen and (min-width: 900px) {
+    flex: 1 1 0% !important;
+  }
+
+@media only screen and (max-width: 899px) and (min-width: 0) {
+    margin-bottom: 12px;
+    margin-right: 6px;
+  }
 `;
 
 const MainSearchBarContainer = styled.div`
   display: flex;
   align-items: center;
   margin: 0 auto;
+  justify-content: space-between;
+  z-index: 200;
   @media only screen and (min-width: 900px) {
     flex: 1 1 0% !important;
   }
@@ -144,6 +160,49 @@ const MainSearchBarContainer = styled.div`
     padding-right: 12px !important;
   }
 
+  @media screen and (max-width: 900px) {
+    position: static;
+    padding: 0;
+  }
+`;
+
+const HamburgerButton = styled.button`
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  border-radius: 24px;
+  min-height: 38px;
+  min-width: 38px;
+  margin-right: 20px;
+  margin-bottom: 5px;
+  @media only screen and (min-width: 900px) {
+    display: none !important;
+  }
+
+  &:hover {
+    background-color: #e8eaf6;
+  }
+`;
+
+const HamburgerContainer = styled.div`
+  @media only screen and (min-width: 0) {
+      order: 2 !important;
+  }
+  @media only screen and (min-width: 0) {
+      flex-basis: 100% !important;
+  }
+  @media only screen and (min-width: 0) {
+      display: flex !important;
+  }
+
+  @media only screen and (min-width: 900px) {
+    order: 0 !important;
+  }
+
+  @media only screen and (min-width: 900px) {
+    flex: 1 1 0% !important;
+  }
 `;
 
 class SearchBar extends React.Component {
@@ -218,13 +277,18 @@ class SearchBar extends React.Component {
     return (
       <MainSearchBarContainer>
         <Logo>Getsy</Logo>
-        <SearchAndIconContainer searching={searching}>
-          <SearchBarInput placeholder="Search for anything" isSearching={searching} onMouseOver={() => this.handleSearchBarHover()} onMouseLeave={() => this.handleSearchBarHover()} onClick={() => { this.handleSearchBarClick(); this.props.getSearches(this.state.searchItem); }} onChange={(e) => this.handleSearch(e)} value={searchItem} name="searchItem" />
-          <SearchIcon isHovering={isHovering}>
-            <i className="fa fa-search" />
-          </SearchIcon>
-        </SearchAndIconContainer>
-        {this.searchDropDown()}
+        <HamburgerContainer>
+          <HamburgerButton onClick={() => this.props.handleBurgerClick()}><img src="https://img.icons8.com/android/22/000000/menu.png"/></HamburgerButton>
+          <SearchAndIconContainer searching={searching}>
+            <SearchBarInput placeholder="Search for anything" isSearching={searching} onMouseOver={() => this.handleSearchBarHover()} onMouseLeave={() => this.handleSearchBarHover()} onClick={() => { this.handleSearchBarClick(); this.props.getSearches(this.state.searchItem); }} onChange={(e) => this.handleSearch(e)} value={searchItem} name="searchItem" />
+            <SearchIcon isHovering={isHovering}>
+              <i className="fa fa-search" />
+            </SearchIcon>
+            {this.searchDropDown()}
+          </SearchAndIconContainer>
+        </HamburgerContainer>
+        <SignInButton onSignInClick={this.props.onSignInClick} />
+        {/* {this.searchDropDown()} */}
         <OverLay active={searching} onClick={() => this.handleSearchBarClick()} />
       </MainSearchBarContainer>
     );
