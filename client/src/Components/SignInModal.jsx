@@ -241,6 +241,10 @@ const OverLay = styled.div`
   pointer-events: ${(props) => (props.active === 'active' ? 'all' : 'none')};
 `;
 
+const LinkTags = styled.a`
+  color: #595959;
+`;
+
 class SignInModal extends React.Component {
   constructor() {
     super();
@@ -309,11 +313,11 @@ class SignInModal extends React.Component {
                   <SignInCheckBoxInput className="sign-in-checkbox-input" type="checkbox" />
                   <Checkmark className="checkmark" />
                 </SignInCheckBox>
-                <HelperLinksForgot><a href="#">Forgot your password?</a></HelperLinksForgot>
+                <HelperLinksForgot><LinkTags href="#">Forgot your password?</LinkTags></HelperLinksForgot>
               </SignInCheckBoxContainer>
               <ButtonAndTroubleContainer>
                 <SignInSubmitButton onClick={() => console.log('hi')}>Sign In</SignInSubmitButton>
-                <HelperLinksTrouble><a href="#">Trouble signing in?</a></HelperLinksTrouble>
+                <HelperLinksTrouble><LinkTags href="#">Trouble signing in?</LinkTags></HelperLinksTrouble>
               </ButtonAndTroubleContainer>
             </div>
             <OrContainer>

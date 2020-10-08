@@ -306,7 +306,7 @@ class SearchBar extends React.Component {
           <SearchAndIconContainer searching={searching}>
             <SearchBarInput placeholder="Search for anything" isSearching={searching} onMouseOver={() => this.handleSearchBarHover()} onMouseLeave={() => this.handleSearchBarHover()} onClick={() => { this.handleSearchBarClick(); this.props.getSearches(this.state.searchItem); }} onChange={(e) => this.handleSearch(e)} value={searchItem} name="searchItem" />
             <SearchIcon isHovering={isHovering}>
-              <i className="fa fa-search" />
+              <i style={{ paddingTop: '4px' }} className="fa fa-search" />
             </SearchIcon>
             {this.searchDropDown()}
           </SearchAndIconContainer>
