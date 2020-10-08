@@ -125,9 +125,7 @@ class App extends React.Component {
   render() {
     const { searchData, active, HBnavbar } = this.state;
     return (
-      // style={{margin: 0, boxSizing: 'border-box'}}
       <div>
-        {/* <GlobalStyle /> */}
         <MainNavBarContainer>
           <Header>
             <SearchBar handleBurgerClick={this.handleBurgerClick} onSignInClick={this.onSignInClick} searches={searchData} getSearches={this.getSearches} />
@@ -135,7 +133,7 @@ class App extends React.Component {
           <MenuBar />
           <SignInModal overlayClick={this.overlayClick} active={active} addUser={this.addUser} />
         </MainNavBarContainer>
-        <HamburgerNavBar handleBurgerClickClose={this.handleBurgerClickClose} HBnavbar={HBnavbar} />
+        {/* <HamburgerNavBar handleBurgerClickClose={this.handleBurgerClickClose} HBnavbar={HBnavbar} /> */}
       </div>
     );
   }
