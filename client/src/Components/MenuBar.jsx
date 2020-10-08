@@ -54,7 +54,7 @@ const MenuDropDown = styled.div`
   margin: 0;
   position: absolute;
   max-width: 1400px;
-  top: 100px;
+  top: 105px;
   height: auto;
   z-index: 202;
   background-color: white;
@@ -101,6 +101,7 @@ const MenuDropDownLeftContainer = styled.div`
 const MenuDropDownHeader = styled.div`
   box-sizing: border-box;
   margin: 0;
+  display: flex;
   cursor: pointer;
   padding: 12px 0 12px 10px;
 `;

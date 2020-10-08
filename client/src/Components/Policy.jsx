@@ -17,10 +17,14 @@ const NavBarPolicy = styled.span`
   text-align: center;
 `;
 
+const LinkTags = styled.a`
+  color: #595959;
+`;
+
 const Policy = () => (
   <PolicyContainer>
     <NavBarPolicy>
-      By clicking Sign in or Continue with Google, Facebook, or Apple, you agree to Etsy's <a href="#">Terms of Use</a> and <a href="#"> Privacy Policy</a>. Etsy may send you communications; you may change your preferences in your account settings. We'll never post without your permission.
+      By clicking Sign in or Continue with Google, Facebook, or Apple, you agree to Etsy's <LinkTags href="#">Terms of Use</LinkTags> and <LinkTags href="#"> Privacy Policy</LinkTags>. Etsy may send you communications; you may change your preferences in your account settings. We'll never post without your permission.
     </NavBarPolicy>
   </PolicyContainer>
   );

@@ -18,11 +18,11 @@ const OtherSignInButtons = styled.div`
   line-height: 1.5;
   min-height: 48px;
   min-width: 48px;
-  text-align: center;
-  vertical-align: middle;
   z-index: 10;
-  width: 91%;
   margin: 6px 15px;
+  display: flex;
+  align-items: center;
+  padding-left: 45px;
 `;
 
 const Icons = styled.img`
@@ -35,7 +35,7 @@ const OtherSignIn = () => (
   <div className="other-sign-in-buttons">
     <OtherSignInButtons>
       <Icons src="https://img.icons8.com/clouds/45/000000/google-logo.png" />
-      Continue with Google
+      <div>Continue with Google</div>
     </OtherSignInButtons>
     <OtherSignInButtons>
       <Icons src="https://img.icons8.com/clouds/50/000000/facebook-circled.png" />
