@@ -41,6 +41,13 @@ const Pointer = styled.img`
   }
 `;
 
+const MenuDropDownHeader = styled.div`
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  cursor: pointer;
+  `;
+
 const CraftSupplies = ({ subItem }) => {
   if (subItem === 'Home & Hobby') {
     return (
@@ -51,8 +58,10 @@ const CraftSupplies = ({ subItem }) => {
         <CategoryList>
           <BoldCategoryItem item={['Food & Fermenting', 'Floral & Garden Crafts']} />
           <NotBoldCategoryItem item={['Gardening & Plants', 'Floral Arranging']} />
-          <MenuDropDownTitle>All Home & Hobby</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Home & Hobby</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/20370089/c/800/635/0/164/il/ecfe48/2320758227/il_340x270.2320758227_ix48.jpg" more={['DIY craft projects']} />
       </SubCategoriesContainer>
@@ -66,8 +75,10 @@ const CraftSupplies = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Makeup & Face Painting']} />
-          <MenuDropDownTitle>All Jewelry & Beauty</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Jewelry & Beauty</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/20370089/c/800/635/0/164/il/ecfe48/2320758227/il_340x270.2320758227_ix48.jpg" more={['DIY craft projects']} />
       </SubCategoriesContainer>
@@ -80,8 +91,10 @@ const CraftSupplies = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Embroidery', 'Cross Stitch']} />
-          <MenuDropDownTitle>All Sewing & Fiber</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Sewing & Fiber</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/20370089/c/800/635/0/164/il/ecfe48/2320758227/il_340x270.2320758227_ix48.jpg" more={['DIY craft projects']} />
       </SubCategoriesContainer>
@@ -94,8 +107,10 @@ const CraftSupplies = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Origami', 'Party & Gifting']} />
-          <MenuDropDownTitle>All Papercraft</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Papercraft</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/20370089/c/800/635/0/164/il/ecfe48/2320758227/il_340x270.2320758227_ix48.jpg" more={['DIY craft projects']} />
       </SubCategoriesContainer>
@@ -108,8 +123,10 @@ const CraftSupplies = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Collage', 'Calligraphy & Pens']} />
-          <MenuDropDownTitle>All Visual Arts</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Visual Arts</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/20370089/c/800/635/0/164/il/ecfe48/2320758227/il_340x270.2320758227_ix48.jpg" more={['DIY craft projects']} />
       </SubCategoriesContainer>
@@ -121,8 +138,10 @@ const CraftSupplies = ({ subItem }) => {
           <BoldCategoryItem item={['Ceramics & Pottery', 'Metalworking', 'Carving & Whittling']} />
         </CategoryList>
         <CategoryList>
-          <MenuDropDownTitle>All Sculpting & Forming</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Sculpting & Forming</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/20370089/c/800/635/0/164/il/ecfe48/2320758227/il_340x270.2320758227_ix48.jpg" more={['DIY craft projects']} />
       </SubCategoriesContainer>

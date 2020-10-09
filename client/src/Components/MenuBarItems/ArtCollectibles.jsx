@@ -41,6 +41,13 @@ const Pointer = styled.img`
   }
 `;
 
+const MenuDropDownHeader = styled.div`
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  cursor: pointer;
+  `;
+
 const ArtCollectibles = () => (
   <SubCategoriesContainer>
     <CategoryList>
@@ -53,8 +60,10 @@ const ArtCollectibles = () => (
     <CategoryList>
       <BoldCategoryItem item={['Collectibles']} />
       <NotBoldCategoryItem item={['Figurines & Knick Knacks', 'Memorabilia', 'Coins & Money']} />
-      <MenuDropDownTitle>All Art & Collectibles</MenuDropDownTitle>
-      <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+      <MenuDropDownHeader>
+        <MenuDropDownTitle>All Art & Collectibles</MenuDropDownTitle>
+        <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+      </MenuDropDownHeader>
     </CategoryList>
     <MenuCategoryPicture url="https://i.etsystatic.com/21866261/d/il/566e40/2344300190/il_340x270.2344300190_fdca.jpg?version=0" more={['Home gallery']} />
   </SubCategoriesContainer>

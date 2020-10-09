@@ -41,6 +41,13 @@ const Pointer = styled.img`
   }
 `;
 
+const MenuDropDownHeader = styled.div`
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  cursor: pointer;
+  `;
+
 const ClothingShoes = ({ subItem }) => {
   if (subItem === 'Women\'s') {
     return (
@@ -52,8 +59,10 @@ const ClothingShoes = ({ subItem }) => {
         <CategoryList>
           <BoldCategoryItem item={['Women\'s Shoes']} />
           <NotBoldCategoryItem item={['Boots']} />
-          <MenuDropDownTitle>All Women's</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Women's</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/9341357/d/il/42b332/2055379748/il_340x270.2055379748_n886.jpg?version=0" more={['Women\'s fasion']} />
       </SubCategoriesContainer>
@@ -68,8 +77,10 @@ const ClothingShoes = ({ subItem }) => {
         <CategoryList>
           <BoldCategoryItem item={['Men\'s Shoes']} />
           <NotBoldCategoryItem item={['Boots']} />
-          <MenuDropDownTitle>All Men's</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Men's</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/9341357/d/il/42b332/2055379748/il_340x270.2055379748_n886.jpg?version=0" more={['Women\'s fasion']} />
       </SubCategoriesContainer>
@@ -88,8 +99,10 @@ const ClothingShoes = ({ subItem }) => {
           <NotBoldCategoryItem item={['Boots']} />
           <BoldCategoryItem item={['Boys\' Shoes']} />
           <NotBoldCategoryItem item={['Boots']} />
-          <MenuDropDownTitle>All Kids' & Baby</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Kids' & Baby</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/9341357/d/il/42b332/2055379748/il_340x270.2055379748_n886.jpg?version=0" more={['Women\'s fasion']} />
       </SubCategoriesContainer>
@@ -104,8 +117,10 @@ const ClothingShoes = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Luggage & Duffel Bags', 'Phone Cases']} />
-          <MenuDropDownTitle>All Bags & Purses</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Bags & Purses</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/9341357/d/il/42b332/2055379748/il_340x270.2055379748_n886.jpg?version=0" more={['Women\'s fasion']} />
       </SubCategoriesContainer>
