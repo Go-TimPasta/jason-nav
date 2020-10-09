@@ -41,6 +41,13 @@ const Pointer = styled.img`
   }
 `;
 
+const MenuDropDownHeader = styled.div`
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  cursor: pointer;
+  `;
+
 const JewelryAccessories = ({ subItem }) => {
   if (subItem === 'Accessories') {
     return (
@@ -54,8 +61,10 @@ const JewelryAccessories = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Scarves & Wraps', 'Belts & Suspenders', 'Keychains & Lanyards', 'Gloves & Mittens', 'Umbrellas & Rain Accessories']} />
-          <MenuDropDownTitle>All Accessories</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Accessories</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url={"https://i.etsystatic.com/11266858/d/il/ef6883/2581486117/il_340x270.2581486117_4ljl.jpg?version=0"} more={['Jewelry, handbags, and accessories']} />
       </SubCategoriesContainer>
@@ -70,8 +79,10 @@ const JewelryAccessories = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Luggage & Duffel Bags', 'Phone Cases']} />
-          <MenuDropDownTitle>All Bags & Purses</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Bags & Purses</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url={"https://i.etsystatic.com/11266858/d/il/ef6883/2581486117/il_340x270.2581486117_4ljl.jpg?version=0"} more={['Jewelry, handbags, and accessories']} />
       </SubCategoriesContainer>
@@ -84,8 +95,10 @@ const JewelryAccessories = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Chains', 'Bib Necklaces', 'Tassel Necklaces']} />
-          <MenuDropDownTitle>All Necklaces</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Necklaces</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url={"https://i.etsystatic.com/11266858/d/il/ef6883/2581486117/il_340x270.2581486117_4ljl.jpg?version=0"} more={['Jewelry, handbags, and accessories']} />
       </SubCategoriesContainer>
@@ -99,8 +112,10 @@ const JewelryAccessories = ({ subItem }) => {
         <CategoryList>
           <BoldCategoryItem item={['Wedding & Engagement']} />
           <NotBoldCategoryItem item={['Engagement Rings', 'Wedding Bands', 'Promise Rings', 'Bridal Sets']} />
-          <MenuDropDownTitle>All Rings</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Rings</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url={"https://i.etsystatic.com/11266858/d/il/ef6883/2581486117/il_340x270.2581486117_4ljl.jpg?version=0"} more={['Jewelry, handbags, and accessories']} />
       </SubCategoriesContainer>
@@ -113,8 +128,10 @@ const JewelryAccessories = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Cluster Earrings', 'Cuff & Wrap Earrings', 'Clip-On Earrings']} />
-          <MenuDropDownTitle>All Earrings</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Earrings</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url={"https://i.etsystatic.com/11266858/d/il/ef6883/2581486117/il_340x270.2581486117_4ljl.jpg?version=0"} more={['Jewelry, handbags, and accessories']} />
       </SubCategoriesContainer>
@@ -127,8 +144,10 @@ const JewelryAccessories = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Cuff Bracelets', 'Chain & Link Bracelets']} />
-          <MenuDropDownTitle>All Bracelets</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Bracelets</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url={"https://i.etsystatic.com/11266858/d/il/ef6883/2581486117/il_340x270.2581486117_4ljl.jpg?version=0"} more={['Jewelry, handbags, and accessories']} />
       </SubCategoriesContainer>
@@ -141,8 +160,10 @@ const JewelryAccessories = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Shoulder Jewelry', 'Toe Rings', 'Lip Rings']} />
-          <MenuDropDownTitle>All Body Jewelry</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Body Jewelry</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url={"https://i.etsystatic.com/11266858/d/il/ef6883/2581486117/il_340x270.2581486117_4ljl.jpg?version=0"} more={['Jewelry, handbags, and accessories']} />
       </SubCategoriesContainer>

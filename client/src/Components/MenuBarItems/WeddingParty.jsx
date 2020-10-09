@@ -41,6 +41,13 @@ const Pointer = styled.img`
   }
 `;
 
+const MenuDropDownHeader = styled.div`
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  cursor: pointer;
+  `;
+
 const WeddingParty = ({ subItem }) => {
   if (subItem === 'Party Supplies') {
     return (
@@ -49,8 +56,10 @@ const WeddingParty = ({ subItem }) => {
           <BoldCategoryItem item={['Party Décor', 'Baking & Cake Decoration']} />
         </CategoryList>
         <CategoryList>
-          <MenuDropDownTitle>All Party Supplies</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Party Supplies</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/6739878/c/2000/1589/0/17/il/287269/2198306279/il_340x270.2198306279_4ngm.jpg" more={['Getsy weddings']} />
       </SubCategoriesContainer>
@@ -65,8 +74,10 @@ const WeddingParty = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Gift Wrapping', 'Holiday & Seasonal Cards', 'Stationery']} />
-          <MenuDropDownTitle>All Invitations & Paper</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Invitations & Paper</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/6739878/c/2000/1589/0/17/il/287269/2198306279/il_340x270.2198306279_4ngm.jpg" more={['Getsy weddings']} />
       </SubCategoriesContainer>
@@ -81,8 +92,10 @@ const WeddingParty = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Baskets & Boxes', 'Ring Bearer Pillows', 'Plants']} />
-          <MenuDropDownTitle>All Wedding Decorations</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Wedding Decorations</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/6739878/c/2000/1589/0/17/il/287269/2198306279/il_340x270.2198306279_4ngm.jpg" more={['Getsy weddings']} />
       </SubCategoriesContainer>
@@ -95,8 +108,10 @@ const WeddingParty = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Portraits & Frames', 'Albums & Scrapbooks']} />
-          <MenuDropDownTitle>All Wedding Gifts</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Wedding Gifts</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/6739878/c/2000/1589/0/17/il/287269/2198306279/il_340x270.2198306279_4ngm.jpg" more={['Getsy weddings']} />
       </SubCategoriesContainer>
@@ -110,8 +125,10 @@ const WeddingParty = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Cummerbunds', 'Neckties', 'Umbrellas', 'Hats']} />
-          <MenuDropDownTitle>All Wedding Accessories</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Wedding Accessories</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/6739878/c/2000/1589/0/17/il/287269/2198306279/il_340x270.2198306279_4ngm.jpg" more={['Getsy weddings']} />
       </SubCategoriesContainer>
@@ -125,8 +142,10 @@ const WeddingParty = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Lingerie & Garters', 'Suits']} />
-          <MenuDropDownTitle>All Wedding Clothing</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Wedding Clothing</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/6739878/c/2000/1589/0/17/il/287269/2198306279/il_340x270.2198306279_4ngm.jpg" more={['Getsy weddings']} />
       </SubCategoriesContainer>
@@ -140,8 +159,10 @@ const WeddingParty = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Necklaces', 'Bracelets', 'Jewelry Sets']} />
-          <MenuDropDownTitle>All Wedding Jewelry</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Wedding Jewelry</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/6739878/c/2000/1589/0/17/il/287269/2198306279/il_340x270.2198306279_4ngm.jpg" more={['Getsy weddings']} />
       </SubCategoriesContainer>

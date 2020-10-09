@@ -41,6 +41,13 @@ const Pointer = styled.img`
   }
 `;
 
+const MenuDropDownHeader = styled.div`
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  cursor: pointer;
+  `;
+
 const HomeLiving = ({ subItem }) => {
   if (subItem === 'Home') {
     return (
@@ -52,8 +59,10 @@ const HomeLiving = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Furniture', 'Bedding', 'Bathroom', 'Outdoor & Gardening', 'Storage & Organization', 'Office', 'Lighting', 'Kitchen & Dining', 'Food & Drink', 'Spirituality & Religion']} />
-          <MenuDropDownTitle>All Home</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Home</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/13947205/c/1241/986/447/41/il/da112b/1740733266/il_340x270.1740733266_83i7.jpg" more={['Design ideas and inspiration']} />
       </SubCategoriesContainer>
@@ -66,8 +75,10 @@ const HomeLiving = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Soaps & Bath Bombs', 'Sex Toys', 'Face Masks & Coverings', 'Hand Sanitizers']} />
-          <MenuDropDownTitle>All Bath & Beauty</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Bath & Beauty</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/13947205/c/1241/986/447/41/il/da112b/1740733266/il_340x270.1740733266_83i7.jpg" more={['Design ideas and inspiration']} />
       </SubCategoriesContainer>
@@ -81,8 +92,10 @@ const HomeLiving = ({ subItem }) => {
         </CategoryList>
         <CategoryList>
           <BoldCategoryItem item={['Pet Bedding', 'Pet Carriers & Houses']} />
-          <MenuDropDownTitle>All Pet Supplies</MenuDropDownTitle>
-          <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          <MenuDropDownHeader>
+            <MenuDropDownTitle>All Pet Supplies</MenuDropDownTitle>
+            <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+          </MenuDropDownHeader>
         </CategoryList>
         <MenuCategoryPicture url="https://i.etsystatic.com/13947205/c/1241/986/447/41/il/da112b/1740733266/il_340x270.1740733266_83i7.jpg" more={['Design ideas and inspiration']} />
       </SubCategoriesContainer>

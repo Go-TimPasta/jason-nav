@@ -41,6 +41,13 @@ const Pointer = styled.img`
   }
 `;
 
+const MenuDropDownHeader = styled.div`
+  box-sizing: border-box;
+  margin: 0;
+  display: flex;
+  cursor: pointer;
+  `;
+
 const ToysEntertainment = () => (
   <SubCategoriesContainer>
     <CategoryList>
@@ -56,8 +63,10 @@ const ToysEntertainment = () => (
     <CategoryList>
       <BoldCategoryItem item={['Movies & Music']} />
       <NotBoldCategoryItem item={['Musical Instruments', 'Instrument Straps', 'Recorded Audio', 'Sheet Music', 'All Movies', 'All Music']} />
-      <MenuDropDownTitle>All Toys & Entertainment</MenuDropDownTitle>
-      <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+      <MenuDropDownHeader>
+        <MenuDropDownTitle>All Toys & Entertainment</MenuDropDownTitle>
+        <Pointer src="https://img.icons8.com/fluent-systems-filled/17/000000/long-arrow-right.png" />
+      </MenuDropDownHeader>
     </CategoryList>
     <MenuCategoryPicture url="https://i.etsystatic.com/7262992/d/il/c8ca2f/2024113706/il_340x270.2024113706_brm9.jpg?version=0" more={['Home tech accessories']} />
   </SubCategoriesContainer>
