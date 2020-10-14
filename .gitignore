@@ -102,3 +102,5 @@ bundle.js
 
 # TernJS port file
 .tern-port
+
+database/config.js

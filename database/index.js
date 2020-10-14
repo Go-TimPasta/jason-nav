@@ -1,8 +1,9 @@
 const mysql = require('mysql');
+const PASSWORD = require('./config.js');
 
 const connection = mysql.createConnection({
   user: 'root',
-  password: '',
+  password: PASSWORD,
   database: 'navBarDB',
 });
 
