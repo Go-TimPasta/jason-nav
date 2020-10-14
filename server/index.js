@@ -17,9 +17,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //  serve up static files on client
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
-//  route to get users data if needed.
-app.get('/user', (req, res) => {
-  dbHelpers.getUsers((err, results) => {
+app.get('/entry', (req, res) => {
+  console.log(req.query);
+  dbHelpers.getEntries(req.query.search, (err, results) => {
     if (err) {
       res.status(400).send(err);
     } else {
@@ -28,20 +28,8 @@ app.get('/user', (req, res) => {
   });
 });
 
-//  route to insert username and password into DB
-app.post('/user', (req, res) => {
-  dbHelpers.postUser(req.body, (err) => {
-    if (err) {
-      res.status(400).send(err);
-    } else {
-      res.status(200).send('SUCCESSFUL USER POST');
-    }
-  });
-});
-
-app.get('/entry', (req, res) => {
-  console.log(req.query);
-  dbHelpers.getEntries(req.query.search, (err, results) => {
+app.get('/entries', (req, res) => {
+  dbHelpers.getAllEntries((err, results) => {
     if (err) {
       res.status(400).send(err);
     } else {
@@ -56,6 +44,36 @@ app.post('/entry', (req, res) => {
       res.status(400).send(err);
     } else {
       res.status(200).send('SUCCESSFUL USER POST');
+    }
+  });
+});
+
+app.delete('/entry', (req, res) => {
+  dbHelpers.deleteAll((err) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send('Deleted everything!');
+    }
+  });
+});
+
+app.put('/entry/:id', (req, res) => {
+  dbHelpers.updateEntry(req, (err) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send('Updated entry!');
+    }
+  });
+});
+
+app.delete('/entry/:id', (req, res) => {
+  dbHelpers.deleteEntry(req, (err) => {
+    if (err) {
+      res.status(400).send(err);
+    } else {
+      res.status(200).send('Deleted entry!');
     }
   });
 });
