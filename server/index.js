@@ -1,8 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const morgan = require('morgan')
 const cors = require('cors');
 const path = require('path');
-const dbHelpers = require('../database/dbHelpers.js');
+const sdbHelpers = require('../mysql/dbHelpers.js');
+const mdbHelpers = require('../mongo/controllers.js');
+const pgdbHelpers =require('../postgresql/dbHelpers.js');
 
 const port = 8001;
 const app = express();
@@ -13,23 +16,14 @@ app.use(cors());
 //  middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(morgan('dev'));
 
 //  serve up static files on client
 app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/entry', (req, res) => {
   console.log(req.query);
-  dbHelpers.getEntries(req.query.search, (err, results) => {
-    if (err) {
-      res.status(400).send(err);
-    } else {
-      res.status(200).json(results);
-    }
-  });
-});
-
-app.get('/entries', (req, res) => {
-  dbHelpers.getAllEntries((err, results) => {
+  mdbHelpers.getEntries(req.query.search, (err, results) => {
     if (err) {
       res.status(400).send(err);
     } else {
@@ -39,41 +33,11 @@ app.get('/entries', (req, res) => {
 });
 
 app.post('/entry', (req, res) => {
-  dbHelpers.postEntry(req.body, (err) => {
+  mdbHelpers.postEntry(req.body, (err) => {
     if (err) {
       res.status(400).send(err);
     } else {
       res.status(200).send('SUCCESSFUL USER POST');
-    }
-  });
-});
-
-app.delete('/entry', (req, res) => {
-  dbHelpers.deleteAll((err) => {
-    if (err) {
-      res.status(400).send(err);
-    } else {
-      res.status(200).send('Deleted everything!');
-    }
-  });
-});
-
-app.put('/entry/:id', (req, res) => {
-  dbHelpers.updateEntry(req, (err) => {
-    if (err) {
-      res.status(400).send(err);
-    } else {
-      res.status(200).send('Updated entry!');
-    }
-  });
-});
-
-app.delete('/entry/:id', (req, res) => {
-  dbHelpers.deleteEntry(req, (err) => {
-    if (err) {
-      res.status(400).send(err);
-    } else {
-      res.status(200).send('Deleted entry!');
     }
   });
 });

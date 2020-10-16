@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const PASSWORD = require('./config.js');
+const PASSWORD = require('../config.js');
 
 const connection = mysql.createConnection({
   user: 'root',

@@ -34,23 +34,33 @@ Open up the terminal and from within the root directory, install the dependencie
 npm install
 ```
 
-Then navigate to the database directory. Make sure that your MySQL server is running and seed the schema file with the command:
+Then navigate to the 'postgresql' directory. Make sure that the PostgreSQL server is running and seed the schema file with the command:
 
 ```sh
-mysql -u root -p < schema.sql
+psql postgresql < schema.sql
+```
+This will create your database and table/schema inside the PostgreSQL server.
+
+Rename the configExample.json file to config.json and input the necessary information for the PostgreSQL server.
+
+Navigate back to the root directory and run this command to create your .csv file.
+
+```sh
+npm run csv
 ```
 
-Rename the configExample.js file to config.js and input the password for your MySQL server if you have one.
+IMPORTANT! Make sure you have "mongoimport" installed onto your local machine before moving onto the next step.
 
-Go back to the root directory and run the seeding function scripts to import data into your schema:
+Enter this in the terminal and not the mongo shell.
+
+```sh
+mongoimport --type csv -d navBarDB -c searches --headerline --drop entries.csv
+```
+
+Run the seeding script to import data into your PostgreSQL schema:
 
 ```sh
 npm run seed
-npm run seed2
-npm run seed3
-npm run seed4
-npm run seed5
-npm run seed6
 ```
 
 Run these scripts to start the server and serve the static files:
@@ -60,6 +70,6 @@ npm run build
 npm start
 ```
 
-Open up your browser and navigate to http://localhost:3003/
+Open up your browser and navigate to http://localhost:8001/
 
 Every refresh/reload will render a random campsite!
