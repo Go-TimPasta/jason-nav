@@ -1,7 +1,0 @@
-{
-  "host": "your host",
-  "user": "your username",
-  "pw": "your password",
-  "db": "your database name",
-  "port": "port, 5432 is default"
-}

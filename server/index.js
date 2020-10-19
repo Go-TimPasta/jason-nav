@@ -3,9 +3,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan')
 const cors = require('cors');
 const path = require('path');
-const sdbHelpers = require('../mysql/dbHelpers.js');
-const mdbHelpers = require('../mongo/controllers.js');
-const pgdbHelpers =require('../postgresql/dbHelpers.js');
+const dbHelpers = require('../mongo/controllers.js');
 
 const port = 8001;
 const app = express();
@@ -32,14 +30,4 @@ app.get('/entry', (req, res) => {
   });
 });
 
-app.post('/entry', (req, res) => {
-  mdbHelpers.postEntry(req.body, (err) => {
-    if (err) {
-      res.status(400).send(err);
-    } else {
-      res.status(200).send('SUCCESSFUL USER POST');
-    }
-  });
-});
-
-app.listen(port, () => console.log(`SUCCESSFUL CONNECTION LISTENING ON PORT #: ${port}`));
+app.listen(port, () => console.log(`SUCCESSFUL CONNECTION LISTENING ON PORT: ${port}`));

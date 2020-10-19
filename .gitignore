@@ -104,6 +104,4 @@ bundle.js
 .tern-port
 
 # Huge data files/config
-config.js
 entries.csv
-postgresql/config.json
