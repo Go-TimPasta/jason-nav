@@ -103,4 +103,5 @@ bundle.js
 # TernJS port file
 .tern-port
 
-database/config.js
+# Huge data files/config
+entries.csv

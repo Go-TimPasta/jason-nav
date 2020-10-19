@@ -4,9 +4,12 @@
   "description": "FEC-Etsy-NavBar",
   "main": "webpack.config.js",
   "scripts": {
-    "build": "webpack -d --watch",
-    "start": "nodemon server/index.js",
-    "seed": "node database/seed.js",
+    "build": "webpack",
+    "build:dev": "webpack -d --watch",
+    "start:dev": "nodemon server/index.js",
+    "start": "node server/index.js",
+    "csv": "node generateData.js",
+    "seed": "node postgresql/seed.js",
     "test": "jest"
   },
   "repository": {
@@ -44,7 +47,9 @@
     "express": "^4.17.1",
     "faker": "^5.1.0",
     "jest": "^26.4.2",
-    "mysql": "^2.18.1",
+    "mongodb": "^3.6.2",
+    "mongoose": "^5.10.9",
+    "morgan": "^1.10.0",
     "nodemon": "^2.0.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
