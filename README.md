@@ -32,15 +32,19 @@ npm run csv
 
 The "npm run csv" creates a CSV file in the root directory named "entries.csv"
 
-IMPORTANT! Make sure you have mongoimport installed onto your local machine before moving onto the next step.
-
-Run this command in the terminal and not the mongo shell.
+Navigate to the database directory and import the schema into Postgres by running the command:
 
 ```sh
-mongoimport --type csv -d navBarDB -c searches --headerline --drop entries.csv
+psql postgres < schema.sql
 ```
 
-Run these scripts to start the server and serve the static files:
+And then the seeding script:
+
+```sh
+npm run seed
+```
+
+Go back to the root diretory and run these scripts to start the server and serve the static files:
 
 ```sh
 npm run build

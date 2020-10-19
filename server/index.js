@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan')
 const cors = require('cors');
 const path = require('path');
-const dbHelpers = require('../mongo/controllers.js');
+const dbHelpers = require('../database/dbHelpers.js');
 
 const port = 8001;
 const app = express();
@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, '../client/dist')));
 
 app.get('/entry', (req, res) => {
   console.log(req.query);
-  mdbHelpers.getEntries(req.query.search, (err, results) => {
+  dbHelpers.getEntries(req.query.search, (err, results) => {
     if (err) {
       res.status(400).send(err);
     } else {
