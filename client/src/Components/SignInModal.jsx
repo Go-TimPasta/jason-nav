@@ -349,7 +349,7 @@ class SignInModal extends React.Component {
               <InputContainerLabels>Password</InputContainerLabels>
               <Inputs searching={searching} type="password" name="password" value={password} onChange={this.onChangeHandler} />
             </InputContainers>
-            <SignInSubmitButton onClick={() => {this.props.addUser(username, password, email); this.props.overlayClick(); this.resetInputs(); this.handleModulePage();}}>Register</SignInSubmitButton>
+            <SignInSubmitButton onClick={() => { this.props.overlayClick(); this.resetInputs(); this.handleModulePage();}}>Register</SignInSubmitButton>
           </div>
           <OrContainer>
             <OrSpan>OR</OrSpan>
