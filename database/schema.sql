@@ -6,5 +6,5 @@ CREATE DATABASE navbardb;
 
 CREATE TABLE searches (
   id SERIAL PRIMARY KEY,
-  item VARCHAR(200)
+  item TEXT NOT NULL
 );

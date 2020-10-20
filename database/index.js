@@ -1,12 +1,12 @@
 const { Pool } = require('pg');
-const PASSWORD = require('./config.json').pw;
+const config = require('./config.json');
 
 const pool = new Pool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'navBarDB',
-  password: PASSWORD,
-  port: 5432
+  user: config.user,
+  host: config.host,
+  database: config.db,
+  password: config.pw,
+  port: parseInt(config.port)
 });
 
 module.exports = pool;

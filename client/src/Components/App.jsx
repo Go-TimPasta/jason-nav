@@ -39,39 +39,23 @@ class App extends React.Component {
     super();
     this.state = {
       searchData: [],
-      userData: [],
       active: '',
       HBnavbar: false,
     };
     this.onSignInClick = this.onSignInClick.bind(this);
     this.overlayClick = this.overlayClick.bind(this);
-    this.getUsers = this.getUsers.bind(this);
-    this.addUser = this.addUser.bind(this);
     this.getSearches = this.getSearches.bind(this);
     this.handleBurgerClick = this.handleBurgerClick.bind(this);
     this.handleBurgerClickClose = this.handleBurgerClickClose.bind(this);
   }
 
   componentDidMount() {
-    this.getUsers();
   }
 
   onSignInClick() {
     this.setState({
       active: 'active',
     });
-  }
-
-  getUsers() {
-    axios.get('/user')
-      .then((results) => {
-        this.setState({
-          userData: results.data,
-        });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
   }
 
   getSearches(searchItem) {
@@ -84,20 +68,6 @@ class App extends React.Component {
         this.setState({
           searchData: results.data,
         });
-      })
-      .catch((err) => {
-        console.error(err);
-      });
-  }
-
-  addUser(username, password, email) {
-    axios.post('/user', {
-      username,
-      password,
-      email,
-    })
-      .then(() => {
-        this.getUsers();
       })
       .catch((err) => {
         console.error(err);
@@ -131,7 +101,7 @@ class App extends React.Component {
             <SearchBar handleBurgerClick={this.handleBurgerClick} onSignInClick={this.onSignInClick} searches={searchData} getSearches={this.getSearches} />
           </Header>
           <MenuBar />
-          <SignInModal overlayClick={this.overlayClick} active={active} addUser={this.addUser} />
+          <SignInModal overlayClick={this.overlayClick} active={active} />
         </MainNavBarContainer>
         {/* <HamburgerNavBar handleBurgerClickClose={this.handleBurgerClickClose} HBnavbar={HBnavbar} /> */}
       </div>
