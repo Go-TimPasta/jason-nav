@@ -316,7 +316,7 @@ class SignInModal extends React.Component {
                 <HelperLinksForgot><LinkTags href="#">Forgot your password?</LinkTags></HelperLinksForgot>
               </SignInCheckBoxContainer>
               <ButtonAndTroubleContainer>
-                <SignInSubmitButton onClick={() => console.log('hi')}>Sign In</SignInSubmitButton>
+                <SignInSubmitButton>Sign In</SignInSubmitButton>
                 <HelperLinksTrouble><LinkTags href="#">Trouble signing in?</LinkTags></HelperLinksTrouble>
               </ButtonAndTroubleContainer>
             </div>
