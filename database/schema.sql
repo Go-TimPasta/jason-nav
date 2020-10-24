@@ -5,6 +5,5 @@ CREATE DATABASE navbardb;
 \c navbardb;
 
 CREATE TABLE searches (
-  id SERIAL PRIMARY KEY,
   item TEXT NOT NULL
 );
