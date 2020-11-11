@@ -8,14 +8,19 @@
 
 ## Summary
 
-In essence, this application was centered around inheriting Getsy's legacy codebase and then extending the capabilities of the database and server layer to support production-level traffic while maintaing its service-oriented architecture. This entitled implementing techniques such as indexing, compression, clustering, horizontal scaling, and caching. To learn more, feel free to email me at jasonhon1240@gmail.com.
+In essence, this application was centered around inheriting Getsy's legacy codebase and then extending the capabilities of the database and server layer to support production-level traffic while maintaing its service-oriented architecture. This entitled implementing techniques such as indexing, compression, clustering, horizontal scaling, and caching. To learn more about the journey, feel free to reach out to me at jasonhong1240@gmail.com.
 
 ## Result
 
 After horizontally scaling the service on 4 AWS EC2 t2.micro instances and utilizing round robin load balancing with content caching on my NGINX proxy server, I was able to handle 10,000 requests per second with a 0.0% error rate and an average latency of 62 ms.
 
-![Screenshot](pictures/result.png)
+![Result](Result.png)
 
+This is in comparison to...
+
+![Before](Before.png)
+
+In conclusion:
 
 | FROM             | TO              |
 |------------------|-----------------|
@@ -28,11 +33,6 @@ This equates to...
 |------------------|-----------------|
 | **98.34%** improvement in speed  | **100%** error reduction  |
 | It takes **1.66%** of the time it did before! |
-
-
-
-This is in comparison to the
-
 
 ## Setup
 
