@@ -1,25 +1,38 @@
 # Getsy Nav Bar
 
-This is an application that was centered around inheriting gEtsy's legacy codebase and then extending the capabilities of the database and server layer to support production-level traffic while maintaing its service-oriented architecture. In essence, my mission was to build the server and database to handle large quantities of data and traffic.
-
-## Related Projects
-
-  - https://github.com/Go-TimPasta/tim-related
-  - https://github.com/Go-TimPasta/nick-reviews
-  - https://github.com/Go-TimPasta/SellerDescription
-
-
 ## Table of Contents
 
-1. [CRUD Operations](#CRUD)
-2. [Setup](#Setup)
+1. [Summary](#Summary)
+2. [Result](#Result)
+4. [Setup](#Setup)
+
+## Summary
+
+In essence, this application was centered around inheriting Getsy's legacy codebase and then extending the capabilities of the database and server layer to support production-level traffic while maintaing its service-oriented architecture. This entitled implementing techniques such as indexing, compression, clustering, horizontal scaling, and caching. To learn more, feel free to email me at jasonhon1240@gmail.com.
+
+## Result
+
+After horizontally scaling the service on 4 AWS EC2 t2.micro instances and utilizing round robin load balancing with content caching on my NGINX proxy server, I was able to handle 10,000 requests per second with a 0.0% error rate and an average latency of 62 ms.
+
+![Screenshot](pictures/result.png)
 
 
-## CRUD
+| FROM             | TO              |
+|------------------|-----------------|
+| 3727 ms          | 62 ms           |
+| 45.3% error rate | 0.0% error rate |
 
-| Endpoint          | Type   | Operation                 |
-|-------------------|--------|---------------------------|
-| `/entry`          | GET    | Get all entries           |
+This equates to...
+
+| SPEED            | ERROR RATE      |
+|------------------|-----------------|
+| **98.34%** improvement in speed  | **100%** error reduction  |
+| It takes **1.66%** of the time it did before! |
+
+
+
+This is in comparison to the
+
 
 ## Setup
 
@@ -52,5 +65,3 @@ npm start
 ```
 
 Open up your browser and navigate to http://localhost:8001/
-
-Every refresh/reload will render a random campsite!
