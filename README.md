@@ -43,7 +43,7 @@ npm install
 npm run csv
 ```
 
-The "npm run csv" creates a CSV file in the root directory named "entries.csv"
+The "npm run csv" script creates a CSV file in the root directory named "entries.csv."
 
 Navigate to the database directory and import the schema into Postgres by running the command:
 
