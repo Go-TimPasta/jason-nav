@@ -40,7 +40,8 @@ This equates to...
 
 ## Technologies
 
-|------------------|
+| Technologies Used |
+|-------------------|
 | PostgreSQL |
 | MongoDB |
 | NGINX |
