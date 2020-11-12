@@ -4,11 +4,14 @@
 
 1. [Summary](#Summary)
 2. [Results](#Results)
+3. [Technologies Used](#Technologies)
 4. [Setup](#Setup)
+
 
 ## Summary
 
 In essence, this application was centered around inheriting Getsy's legacy codebase and then extending the capabilities of the database and server layer to support production-level traffic while maintaing its service-oriented architecture. The task entitled implementing techniques such as indexing, compression, clustering, horizontal scaling, and caching. To learn more about the journey, feel free to reach out to me at jasonhong1240@gmail.com.
+
 
 ## Results
 
@@ -33,6 +36,22 @@ This equates to...
 |------------------|-----------------|
 | **98.34%** improvement in speed  | **100%** error reduction  |
 | It takes **1.66%** of the time it did before! |
+
+
+## Technologies
+
+|------------------|
+| PostgreSQL |
+| MongoDB |
+| NGINX |
+| AWS EC2 |
+| New Relic |
+| Loader.io |
+| k6.io |
+| PM2 |
+| Node.js |
+| Express.js |
+
 
 ## Setup
 
