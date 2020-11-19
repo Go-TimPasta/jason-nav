@@ -10,7 +10,7 @@
 
 ## Summary
 
-In essence, this application was centered around inheriting Getsy's legacy codebase and then extending the capabilities of the database and server layer to support production-level traffic while maintaing its service-oriented architecture. The task entitled implementing techniques such as indexing, compression, clustering, horizontal scaling, and caching. To learn more about the journey, feel free to reach out to me at jasonhong1240@gmail.com.
+In essence, this application was centered around inheriting Getsy's legacy codebase and then extending the capabilities of the database and server layer to support production-level traffic while maintaining its service-oriented architecture. The task entitled implementing techniques such as indexing, compression, clustering, horizontal scaling, and caching. To learn more about the journey, feel free to reach out to me at jasonhong1240@gmail.com.
 
 
 ## Results
